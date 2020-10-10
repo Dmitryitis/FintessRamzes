@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css"
+          rel="stylesheet"/>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+<div class="body_log">
+    <div class="container">
+        <div class="row">
+            <div class="col 12">
+                <div class="items_log2">
+                    <form action="/login">
+                        <div class="form_log2">
+                            <span class="name_log">RAMZES</span>
+                            <label for="login"><span class="item_log">ЛОГИН</span></label>
+                            <div class="form_field">
+                                <input class="inp_log" type="text" placeholder="Введите логин" name="login" id="login"
+                                       pattern="^[a-z0-9_-]{3,}"
+                                       required>
+                                <span class="form_error">Это поле должно содержать минимум 3 сивола</span>
+                            </div>
+                            <label for="psw"><span class="item_log">ПАРОЛЬ</span></label>
+                            <div class="form_field">
+                                <input class="inp_log" type="password" placeholder="Введите пароль" name="psw" id="psw"
+                                       pattern="^(?=.*[0-9].*[0-9])(?=.*[a-z].*[a-z].*[a-z]).{8,}"
+                                       required>
+                                <span class="form_error">Это поле должно содержать минимум 8 символов и минимум 1 цифру</span>
+                            </div>
+                            <div>
+                                <label>
+                                    <input type="checkbox" name="remember_me"> Запомнить меня
+                                </label>
+                            </div>
+                            <div class="items_btn_log2">
+                                <form action="../templates/home.html">
+                                    <button class="btn_log2">Войти</button>
+                                </form>
+                                <form action="../templates/index.html">
+                                    <button class="btn_log2">Назад</button>
+                                </form>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
