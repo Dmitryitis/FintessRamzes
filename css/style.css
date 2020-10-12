@@ -413,22 +413,30 @@ ul {
     width: 100%;
 }
 
+label{
+    margin: 0;
+}
+
 .programs_row1 {
     margin-top: 30px;
 }
 
 .programs_row2 {
     margin-top: 20px;
+    align-items: center;
 }
 
-.text_prog1 {
+.text_prog1, .text_prog2 {
     margin-right: 20px;
-    padding: 0 10px;
+    padding: 0 6px;
+}
+
+.text_prog1:hover, .text_prog2:hover {
+    color: #828282;
 }
 
 .text_prog2 {
     margin-right: 20px;
-    padding: 0 10px;
 }
 
 .search_prog {
@@ -489,10 +497,6 @@ ul {
     background-color: DodgerBlue !important;
     color: #ffffff;
 }
-
-/*.sub_prog {*/
-/*    border: none;*/
-/*}*/
 
 .card_prog {
     width: 100%;
