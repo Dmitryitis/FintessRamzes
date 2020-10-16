@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Our Team</title>
+    <style>
+        <#include "css/bootstrap/bootstrap-grid.min.css">
+    </style>
+    <style>
+        <#include "css/bootstrap/bootstrap.min.css">
+    </style>
+    <style>
+        <#include "css/style.css">
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;700&family=Russo+One&display=swap"
+          rel="stylesheet">
+</head>
+<body>
+<#include "header.ftl">
+<div class="body_team">
+    <div class="container">
+        <div class="row">
+            <div class="col 12">
+                <div class="name_team">
+                    Наша команда
+                </div>
+                <div class="slick-slider">
+                    <div class="item_team">
+                        <img class="photo_coach_team" src="templates/assets/coach1.png" alt="photo">
+                        <div class="name_coach_team">Дмитрий Тарзанов</div>
+                        <div class="achiev_coach_team">Мастер спорта по плаванию в категории КЕРТ
+                        </div>
+                    </div>
+                    <div class="item_team">
+                        <img class="photo_coach_team" src="templates/assets/coach2.png" alt="photo">
+                        <div class="name_coach_team">Алина Федорова</div>
+                        <div class="achiev_coach_team">Заслуженный тренер россии по фитнесу, призер чемпионата
+                            DFT
+                        </div>
+                    </div>
+                    <div class="item_team">
+                        <img class="photo_coach_team" src="templates/assets/coach3.png" alt="photo">
+                        <div class="name_coach_team">Алексей Дудь</div>
+                        <div class="achiev_coach_team">Мастер спорта по легкой атлетике, золотой призер
+                            олимписких игр
+                        </div>
+                    </div>
+                    <div class="item_team">
+                        <img class="photo_coach_team" src="templates/assets/coach4.png" alt="photo">
+                        <div class="name_coach_team">Максим Качков</div>
+                        <div class="achiev_coach_team">Чемпион мира в легком весе по
+                            армреслингу. Победитель чемпионата двора
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="footer">
+    <div class="footer_items">
+        <a class="footer_items-item" href="#">Политика конфиденциальности</a>
+        <a href="#">Обработка персональных данных</a>
+    </div>
+    <div class="footer_items">
+        <a class="footer_items-item" id="feedback" href="#">Написать нам</a>
+        <a href="#">Сообщить об ошибке</a>
+    </div>
+    <div class="footer_items">
+        <span class="footer_items-item">Где мы находимся:</span>
+        <span>г. Казань, ул. Кремлевская д.35</span>
+    </div>
+</div>
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog"
+     aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="comment_mod_home">
+                    <label for="comment"><span class="text_mode_home">КОММЕНТАРИЙ</span></label>
+                    <textarea class="aria_home" type="" placeholder="Введите комментарий" name="comment"
+                              id="comment"
+                              required>
+                                </textarea>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <form action="#feedback" method="post">
+                    <button type="button" class="btn btn-primary" data-dismiss="modal">Save changes
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<link rel="stylesheet" type="text/css"
+      href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+<script type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css"
+      rel="stylesheet"/>
+<script>
+    <#include "js/app.js">
+</script>
+</body>
+</html>
