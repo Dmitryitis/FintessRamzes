@@ -2,6 +2,7 @@ package filter;
 
 import dao.LoginDao;
 import model.User;
+import utilite.HashingPassword;
 
 import javax.servlet.*;
 import javax.servlet.http.Cookie;
@@ -25,7 +26,7 @@ public class LoginFilter implements Filter {
 
         User user = new User();
         user.setEmail(username);
-        user.setPassword(password);
+        user.setPassword(HashingPassword.md5Custom(password));
 
         user = LoginDao.auth(user);
         final HttpSession session = req.getSession();

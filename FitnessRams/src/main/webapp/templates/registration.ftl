@@ -15,42 +15,61 @@
         <div class="row">
             <div class="col 12">
                 <div class="items_log">
-                    <form action="/FitnessRams_war/auth" method="post">
+                    <form action="/FitnessRams_war/registration" method="post">
                         <div class="form_log">
-                            <span class="name_log">RAMZES</span>
-                            <label for="login"><span class="item_log">ЛОГИН</span></label>
+                            <span class="name_log">RAMZES
+                            <br> Регистрация</span>
+                            <div>${error}</div>
+                            <label for="email"><span class="item_log">ЛОГИН</span></label>
                             <div class="form_field">
-                                <input class="inp_log" type="text" placeholder="Введите логин" name="login" id="login"
-                                       pattern="^[a-z0-9_-]{3,}"
-                                       required>
-                                <span class="form_error">Это поле должно содержать минимум 3 символа</span>
+                                <input class="inp_log" type="text" placeholder="Введите email" name="email" id="email">
+                                <span class="form_error">Это поле должно содержать E-Mail в формате example@site.com</span>
                             </div>
-                            <label for="psw"><span class="item_log">ПАРОЛЬ</span></label>
+
+                            <label for="password"><span class="item_log">ПАРОЛЬ</span></label>
                             <div class="form_field">
-                                <input class="inp_log" type="password" placeholder="Введите пароль" name="psw" id="psw"
+                                <input class="inp_log" type="password" placeholder="Введите пароль" name="password"
+                                       id="password"
 
                                        onkeypress="CountPass('pass_id')" onfocus="CountPass('pass_id')"
                                        onkeyup="CountPass('pass_id')" required>
                                 <div id="pass_correct"></div>
-                                <span class="form_error">Это поле должно содержать E-Mail в формате example@site.com</span>
+                                <span class="form_error">Это поле должно содержать хотя бы 3 символа</span>
                             </div>
-                            <label for="psw-repeat"><span class="item_log">ПОВТОРИТЬ ПАРОЛЬ</span></label>
+
+                            <label for="password-repeat"><span class="item_log">ПОВТОРИТЬ ПАРОЛЬ</span></label>
                             <div class="form_field">
-                                <input class="inp_log" type="password" placeholder="Повторите пароль" name="psw-repeat"
-                                       id="psw-repeat" onkeypress="CountPass('pass_id')" onfocus="CountPass('pass_id')"
+                                <input class="inp_log" type="password" placeholder="Повторите пароль"
+                                       name="password-repeat"
+                                       id="password-repeat" onkeypress="CountPass('pass_id')"
+                                       onfocus="CountPass('pass_id')"
                                        onkeyup="CountPass('pass_id')" required>
 
                                 <span class="form_error">Это поле должно содержать E-Mail в формате example@site.com</span>
                             </div>
-                            <div>
-                                <label>
-                                    <input type="checkbox" name="remember_me"> Запомнить меня
-                                </label>
+
+                            <label for="username"><span class="item_log">Имя</span></label>
+                            <div class="form_field">
+                                <input class="inp_log" type="text" placeholder="Введите имя" name="username"
+                                       id="username">
                             </div>
+
+                            <label for="surname"><span class="item_log">Фамилия</span></label>
+                            <div class="form_field">
+                                <input class="inp_log" type="text" placeholder="Введите фамилию" name="surname"
+                                       id="surname">
+
+                            </div>
+
+                            <label for="phone"><span class="item_log">Телефон</span></label>
+                            <div class="form_field">
+                                <input class="inp_log" type="tel" placeholder="Введите ваш номер телефона" name="phone"
+                                       id="phone">
+                            </div>
+
                             <div class="items_btn_log">
-                                <form action="/FitnessRams_war/auth" method="post">
-                                    <button class="btn_log">Создать аккаунт</button>
-                                </form>
+
+                                <button class="btn_log" type="submit">Создать аккаунт</button>
                             </div>
                         </div>
                     </form>

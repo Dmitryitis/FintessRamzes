@@ -43,7 +43,7 @@
 
 
                         </form>
-                        <form action="/FitnessRams_war/registration">
+                        <form action="/FitnessRams_war/registration" method="get">
                             <button class="btn_log">Создать аккаунт</button>
                         </form>
                     </div>

@@ -7,6 +7,7 @@ import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.ArrayList;
 
 public class LoginDao {
     public static User auth(User user) {
@@ -36,6 +37,7 @@ public class LoginDao {
                     result.setPassword(resultSet.getString("password"));
                     result.setUsername(resultSet.getString("username"));
                     result.setSurname(resultSet.getString("surname"));
+                    result.setPhone(resultSet.getString("phone"));
                     result.setStatus_abonement(resultSet.getString("status_abonement"));
                     return result;
                 }
@@ -45,5 +47,28 @@ public class LoginDao {
         }
 
         return null;
+    }
+
+    public static boolean uniqUser(User user){
+        String username = user.getEmail();
+        String usernameDB = "";
+
+        Connection con = DBConnector.createConnection();
+        try{
+            Statement statement = con.createStatement();
+            ResultSet resultSet = statement.executeQuery("select * from user");
+
+            while (resultSet.next()){
+                usernameDB = resultSet.getString("email");
+                if (username.equals(usernameDB)){
+                    return true;
+                }
+            }
+
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
+
+        return false;
     }
 }
