@@ -15,7 +15,7 @@
         <div class="row">
             <div class="col 12">
                 <div class="items_log">
-                    <form action="/FitnessRams_war/profile">
+                    <form action="/FitnessRams_war/auth" method="post">
                         <div class="form_log">
                             <span class="name_log">RAMZES</span>
                             <label for="login"><span class="item_log">ЛОГИН</span></label>
@@ -48,11 +48,8 @@
                                 </label>
                             </div>
                             <div class="items_btn_log">
-                                <form action="/FitnessRams_war/profile">
+                                <form action="/FitnessRams_war/auth" method="post">
                                     <button class="btn_log">Создать аккаунт</button>
-                                </form>
-                                <form action="/FitnessRams_war/login">
-                                    <button class="btn_log">Есть аккаунт</button>
                                 </form>
                             </div>
                         </div>

@@ -19,6 +19,9 @@
 <body>
 
 <#include "header.ftl">
+<#--<#if home == "">-->
+<#--<div>${home}</div>-->
+<#--</#if>-->
 
 <div class="body_home">
     <div class="container">

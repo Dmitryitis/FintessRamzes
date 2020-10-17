@@ -1053,7 +1053,7 @@ label{
 
 .form_log2 {
 
-    height: 55vh;
+    /*height: 55vh;*/
 }
 
 .items_log2 input[type=text], input[type=password] {

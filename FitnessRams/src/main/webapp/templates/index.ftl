@@ -66,10 +66,12 @@
             </div>
         </div>
         <div class="item_ind-foot">
-            <form action="/FitnessRams_war/registration" method="get">
+            <form action="/FitnessRams_war/login" method="get">
                 <button class="btn_ind"><span class="enter_ind">Войти</span></button>
             </form>
-            <span><a href="/FitnessRams_war/home">Продолжить</a> без авторизации</span>
+            <form action="/FitnessRams_war/home" method="post">
+                <span><button type="submit">Продолжить</button> без авторизации</span>
+            </form>
         </div>
     </div>
 </div>
