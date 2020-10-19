@@ -413,7 +413,7 @@ ul {
     width: 100%;
 }
 
-label{
+label {
     margin: 0;
 }
 
@@ -998,6 +998,18 @@ label{
     width: 60%;
 }
 
+.hide {
+    display: none;
+}
+
+.hell{
+    display: block;
+}
+
+.hid{
+    display: none;
+}
+
 .item_log, .item_app {
     font-weight: 400;
     font-size: 18px;
@@ -1337,6 +1349,6 @@ h1 {
     display: block;
 }
 
- .form-control {
+.form-control {
     width: 100%;
 }

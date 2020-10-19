@@ -22,7 +22,7 @@
                             <div>${error}</div>
                             <label for="email"><span class="item_log">ЛОГИН</span></label>
                             <div class="form_field">
-                                <input class="inp_log" type="text" placeholder="Введите email" name="email" id="email">
+                                <input class="inp_log" type="email" placeholder="Введите email" name="email" id="email">
                                 <span class="form_error">Это поле должно содержать E-Mail в формате example@site.com</span>
                             </div>
 
