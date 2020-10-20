@@ -25,3 +25,4 @@
 4) Подбор тренер и программ для всех желающих
 
 Макет дизайна приложения: https://www.figma.com/file/agj9geJoUsBPWqu7Rkernv/Untitled?node-id=0%3A1
+Trello: https://trello.com/b/0jYw5dgh/best-code-makers
