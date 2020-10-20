@@ -1002,12 +1002,39 @@ label {
     display: none;
 }
 
-.hell{
+.hell {
     display: block;
 }
 
-.hid{
+.hid {
     display: none;
+}
+
+#result {
+    color: rebeccapurple;
+    width: 100%;
+    text-align: center;
+    font-size: 30px;
+}
+
+.come__back {
+    padding: 8px 25px;
+    background: #0c5460;
+    color: white;
+    text-decoration: none;
+}
+
+.come__back:hover {
+    color: white;
+}
+
+.come__help {
+    width: 100%;
+    margin-top: 20px;
+}
+
+.row__helper {
+    display: block;
 }
 
 .item_log, .item_app {

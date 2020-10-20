@@ -17,7 +17,7 @@
 <#include "header.ftl">
 <div class="body_prog">
     <div class="container">
-        <div class="row">
+        <div class="row row__helper">
             <div class="col 12">
                 <div class="name_prog">
                     Программы тренировок
@@ -34,15 +34,18 @@
                     <a class="text_prog2" href="#" data-filter="dance">Танцевальные программы</a>
                     <a class="text_prog2" href="#" data-filter="children">Почемучки</a>
                     <img src="templates/assets/asset4.png" class="photo_sear_prog" alt="search">
-                    <form autocomplete="off" class="search_prog" action="/search">
+                    <form autocomplete="off" class="search_prog" action="/FitnessRams_war/programs" method="post">
                         <div class="autocomplete">
                             <label>
                                 <input type="search" name="search" id="search" placeholder="Поиск по сайту">
                             </label>
                         </div>
-                        <input class="sub_prog" type="submit" name="find" value="Найти">
+                        <input class="sub_prog" type="submit" name="find" id="find" value="Найти">
                     </form>
                 </div>
+            </div>
+            <div class="come__help" style="display: ${display}">
+                <a href="/FitnessRams_war/programs" class="come__back">Вернуться ко всем программам</a>
             </div>
             <div class="row">
                 <div class="col 12">
@@ -51,7 +54,8 @@
                             <div class="pages_program">
                                 <#assign x = 1>
                                 <#list programs as program >
-                                    <div data-num=${x} class="num" data-cat="${program.search_name}" id="${program.search_name}">
+                                    <div data-num=${x} class="num" data-cat="${program.search_name}"
+                                         id="${program.search_name}">
                                         <div class="card_prog">
                                             <div class="item_photo_prog">
                                                 <img class="photo_prog" src="${program.img}" alt="photo">
@@ -76,8 +80,10 @@
                                 </#list>
 
                             </div>
-                            <div class="paginator" onclick="pagination(event)"></div>
+                            <div class="paginator" onclick="pagination(event)" style="display: ${paginator}"></div>
+
                         </div>
+                        <div id="result" class="result">${err}</div>
                     </div>
                 </div>
             </div>
@@ -141,6 +147,8 @@
 <script>
     <#include "js/autocomplete.js">
 </script>
-
+<script>
+    <#include "js/search.js">
+</script>
 </body>
 </html>

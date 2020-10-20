@@ -1,6 +1,7 @@
 var div_num = document.querySelectorAll(".num");
+var count = div_num.length
 
-counting(28, 4);
+counting(count, 4);
 
 var main_page = document.getElementById("page1");
 main_page.classList.add("paginator_active");
