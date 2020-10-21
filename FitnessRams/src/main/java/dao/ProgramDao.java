@@ -12,13 +12,13 @@ import java.util.ArrayList;
 public class ProgramDao {
     public static ArrayList<Program> all_program() {
         ArrayList<Program> programs = new ArrayList<Program>();
-        int idprogram = 0;
-        String name_program = "";
-        int time = 0;
-        String text = "";
-        String search_name = "";
-        String img = "";
-        String level = "";
+        int idprogram;
+        String name_program;
+        int time;
+        String text;
+        String search_name;
+        String img;
+        String level;
 
         Connection con = DBConnector.createConnection();
 

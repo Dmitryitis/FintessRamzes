@@ -795,6 +795,18 @@ label {
     font-size: 20px;
     line-height: 36px;
     text-align: center;
+    text-decoration: none;
+    border: 0;
+    background: transparent;
+    color: white;
+}
+
+.name_coach_team:hover{
+    color: white;
+}
+
+.name_coach_team:focus{
+    outline: 0;
 }
 
 .achiev_coach_team {
@@ -1378,4 +1390,111 @@ h1 {
 
 .form-control {
     width: 100%;
+}
+
+
+/*Modal*/
+.modal__team{
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+
+    margin-bottom: 20px;
+}
+
+.modal__team-photo{
+    width: 100%;
+
+    margin-bottom: 10px;
+}
+
+.modal__team-img{
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+}
+
+.modal__team-content{
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+.modal__team-name{
+    font-size: 18px;
+    color: black;
+
+    margin-bottom: 10px;
+}
+
+.modal__team-surname{
+    font-size: 18px;
+    color: black;
+
+    margin-bottom: 10px;
+}
+
+.modal__team-about{
+    font-size: 16px;
+    color: black;
+
+    margin-bottom: 10px;
+}
+
+.modal__team-experience{
+    font-size: 16px;
+    color: black;
+
+    margin-bottom: 10px;
+}
+
+.modal__team-con{
+    font-size: 16px;
+    color: #999;
+
+    margin-bottom: 10px;
+}
+
+.modal__team-ico{
+    display: flex;
+    width: 100%;
+}
+
+.modal__team-item{
+    margin-right: 10px;
+    width: 40px;
+    height: 40px;
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 23px;
+    background: #999;
+
+    transition: transform 0.4s linear,
+background 0.4s linear;
+}
+
+.modal__team-item:hover{
+    background: lightpink;
+    text-decoration: none;
+
+    transform: translateY(-3px);
+}
+
+.whats{
+    color: white;
+    font-size: 18px;
+    text-decoration: none;
+}
+
+.vk{
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+
+.photo{
+    text-decoration: none;
 }
