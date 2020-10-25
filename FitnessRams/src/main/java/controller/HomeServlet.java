@@ -28,6 +28,12 @@ public class HomeServlet extends HttpServlet {
             req.setAttribute("user","");
         }
 
+        if (req.getSession().getAttribute("user") == ""){
+            req.setAttribute("comment_error", "Вы не вошли в систему");
+        } else {
+            req.setAttribute("comment_error", "");
+        }
+        req.setAttribute("error","");
         RequestDispatcher requestDispatcher = req.getRequestDispatcher("templates/home.ftl");
         requestDispatcher.forward(req, resp);
     }
@@ -37,6 +43,8 @@ public class HomeServlet extends HttpServlet {
 
         req.getSession().setAttribute("user","");;
         req.setAttribute("user","");
+        req.setAttribute("error","");
+        req.setAttribute("comment_error", "");
         RequestDispatcher requestDispatcher = req.getRequestDispatcher("templates/home.ftl");
         requestDispatcher.forward(req, resp);
 

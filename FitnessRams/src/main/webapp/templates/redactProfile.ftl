@@ -23,55 +23,54 @@
     <div class="container">
         <div class="row">
             <div class="col 12">
-                <form enctype="multipart/form-data" method="post" action="/FitnessRams_war/profile" class="items_prof">
+                <div class="items_prof">
                     <div class="photo_prof">
-                        <input type="file" class="photo_item_prof" name="img">
+                        <img class="photo_item_prof" src="${user.img}" alt="photo profile">
+                        <form action="/FitnessRams_war/schedule">
+                            <button class="btn_check_prof">
+                                <span class="text_check_prof">Посмотреть расписание</span>
+                            </button>
+                        </form>
                     </div>
                     <div class="container_personal_items_prof">
                         <div class="personal_items_prof">
                             <div class="item_prof">
                                 <span>ИМЯ</span>
 
-
-                                    <label>
-                                        <input class="inp_prof" type="text" name="username">
-                                    </label>
+                                <div class="inp_prof">${user.username}</div>
 
                                 <div class="item-item_prof">
                                     <span>ФАМИЛИЯ</span>
-                                    <label>
-                                        <input class="inp_prof" type="text" name="surname">
-                                    </label>
+                                    <div class="inp_prof">${user.surname}</div>
                                 </div>
                             </div>
                             <div class="item_prof">
                                 <span>ПОЧТА</span>
-                                <label>
-                                    <input class="inp_prof" type="text" name="email">
-                                </label>
+                                <div class="inp_prof">${user.email}</div>
 
                                 <div class="item-item_prof">
                                     <span>Phone</span>
-                                    <label>
-                                        <input class="inp_prof" type="text" name="phone">
-                                    </label>
+                                    <div class="inp_prof">${user.phone}</div>
                                 </div>
-                                <div class="btn_save_prof item-item_prof">
-                                    <button class="btn_item_prof" type="submit">Сохранить</button>
-                                    <div class="error_email" style="color: red">${error_email}</div>
+
+                                <form action="/FitnessRams_war/redactProfile" method="get" class="btn_save_prof item-item_prof">
+                                    <button class="btn_item_prof">Редактировать</button>
+                                </form>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="status_prof">
+                                <span class="text_status_prof">Статус абонемента</span>
+                                <div class="item_status_prof">
+                                    <#if user.status_abonement == 0>
+                                        <span class="status_abonement_prof">Нет</span>
+                                    </#if>
+
                                 </div>
                             </div>
                         </div>
-                        <#--                        <div>-->
-                        <#--                            <div class="status_prof">-->
-                        <#--                                <span class="text_status_prof">Статус абонемента</span>-->
-                        <#--                                <div class="item_status_prof">-->
-                        <#--                                    <span class="status_abonement_prof">Нет</span>-->
-                        <#--                                </div>-->
-                        <#--                            </div>-->
-                        <#--                        </div>-->
                     </div>
-                </form>
+                </div>
             </div>
         </div>
     </div>

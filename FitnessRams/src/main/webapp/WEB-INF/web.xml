@@ -185,5 +185,26 @@
         <filter-name>LoginFilter</filter-name>
         <url-pattern>/auth</url-pattern>
     </filter-mapping>
+    
+    <servlet>
+        <servlet-name>CommentsServlet</servlet-name>
+        <servlet-class>controller.CommentsServlet</servlet-class>
+    </servlet>
+    
+    <servlet-mapping>
+        <servlet-name>CommentsServlet</servlet-name>
+        <url-pattern>/comment</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>RedactProfileServlet</servlet-name>
+        <servlet-class>controller.RedactProfileServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>RedactProfileServlet</servlet-name>
+        <url-pattern>/redactProfile</url-pattern>
+    </servlet-mapping>
+    
 
 </web-app>

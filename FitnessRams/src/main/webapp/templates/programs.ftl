@@ -83,6 +83,7 @@
                             <div class="paginator" onclick="pagination(event)" style="display: ${paginator}"></div>
 
                         </div>
+                        <div class="res" id="res"></div>
                         <div id="result" class="result">${err}</div>
                     </div>
                 </div>
@@ -134,6 +135,25 @@
     </div>
 </div>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+    $(function (){
+        $("#find").on("click", function (event) {
+            var search = $('#search').val();
+
+            $.ajax({
+                type: 'POST',
+                url: "controller.ProgramsServlet",
+                data: {
+                    search: search
+                },
+                success: function (result) {
+                    $("<div class=\"res\">").html(result).appendTo("#res");
+                }
+
+            });
+        });
+    });
+</script>
 <script>
     <#include "js/actchan.js">
 </script>

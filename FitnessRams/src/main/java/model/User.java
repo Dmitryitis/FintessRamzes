@@ -7,7 +7,7 @@ public class User {
     private String password;
     private String email;
     private String img;
-    private String status_abonement;
+    private int status_abonement;
     private String phone;
 
     public String getPhone() {
@@ -66,11 +66,11 @@ public class User {
         this.img = img;
     }
 
-    public String getStatus_abonement() {
+    public int getStatus_abonement() {
         return status_abonement;
     }
 
-    public void setStatus_abonement(String status_abonement) {
+    public void setStatus_abonement(int status_abonement) {
         this.status_abonement = status_abonement;
     }
 }

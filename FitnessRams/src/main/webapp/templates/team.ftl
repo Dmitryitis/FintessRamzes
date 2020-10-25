@@ -37,37 +37,7 @@
                             </div>
                         </div>
                     </#list>
-<#--                    <div class="item_team">-->
-<#--                        <a href="#" class="photo" data-toggle="modal" data-target="#dmitry">-->
-<#--                            <img class="photo_coach_team" src="templates/assets/coach1.png" alt="photo">-->
-<#--                        </a>-->
-<#--                        <button type="button" class="name_coach_team" data-toggle="modal" data-target="#dmitry">Дмитрий-->
-<#--                            Тарзанов-->
-<#--                        </button>-->
-<#--                        <div class="achiev_coach_team">Мастер спорта по плаванию в категории КЕРТ-->
-<#--                        </div>-->
-<#--                    </div>-->
-<#--                    <div class="item_team">-->
-<#--                        <img class="photo_coach_team" src="templates/assets/coach2.png" alt="photo">-->
-<#--                        <div class="name_coach_team">Алина Федорова</div>-->
-<#--                        <div class="achiev_coach_team">Заслуженный тренер россии по фитнесу, призер чемпионата-->
-<#--                            DFT-->
-<#--                        </div>-->
-<#--                    </div>-->
-<#--                    <div class="item_team">-->
-<#--                        <img class="photo_coach_team" src="templates/assets/coach3.png" alt="photo">-->
-<#--                        <div class="name_coach_team">Алексей Дудь</div>-->
-<#--                        <div class="achiev_coach_team">Мастер спорта по легкой атлетике, золотой призер-->
-<#--                            олимписких игр-->
-<#--                        </div>-->
-<#--                    </div>-->
-<#--                    <div class="item_team">-->
-<#--                        <img class="photo_coach_team" src="templates/assets/coach4.png" alt="photo">-->
-<#--                        <div class="name_coach_team">Максим Качков</div>-->
-<#--                        <div class="achiev_coach_team">Чемпион мира в легком весе по-->
-<#--                            армреслингу. Победитель чемпионата двора-->
-<#--                        </div>-->
-<#--                    </div>-->
+
                 </div>
             </div>
         </div>

@@ -38,7 +38,7 @@ public class LoginDao {
                     result.setUsername(resultSet.getString("username"));
                     result.setSurname(resultSet.getString("surname"));
                     result.setPhone(resultSet.getString("phone"));
-                    result.setStatus_abonement(resultSet.getString("status_abonement"));
+                    result.setStatus_abonement(resultSet.getInt("status_abonement"));
                     return result;
                 }
             }

@@ -174,17 +174,18 @@
                     </div>
                 </div>
 
-                <form action="/comment" method="post">
+                <form action="/FitnessRams_war/home" method="get">
                         <textarea class="form-control" name="comment" rows="2"
                                   placeholder="Добавьте Ваш комментарий"></textarea>
                     <div class="mar-top clearfix">
                         <button class="btn btn-sm btn-primary pull-right" type="submit"><i
-                                    class="fa fa-pencil fa-fw"></i>
+                                    class="fa fa-pencil fa-fw" id="btn-comment"></i>
                             Добавить
                         </button>
-                        <a class="btn btn-trans btn-icon fa fa-video-camera add-tooltip" href="#"></a>
-                        <a class="btn btn-trans btn-icon fa fa-camera add-tooltip" href="#"></a>
-                        <a class="btn btn-trans btn-icon fa fa-file add-tooltip" href="#"></a>
+                        <div class="error" id="comment-error" style="color: white">${comment_error}</div>
+<#--                        <a class="btn btn-trans btn-icon fa fa-video-camera add-tooltip" href="#"></a>-->
+<#--                        <a class="btn btn-trans btn-icon fa fa-camera add-tooltip" href="#"></a>-->
+<#--                        <a class="btn btn-trans btn-icon fa fa-file add-tooltip" href="#"></a>-->
                     </div>
                 </form>
             </div>
@@ -220,8 +221,6 @@
                             <p class="text-muted text-sm"><i class="fa fa-mobile fa-lg"></i> - 20-06-2016</p>
                         </div>
                         <p>А я добавлю картинку</p>
-                        <img class="img-responsive thumbnail"
-                             src="https://drawings-girls.ucoz.net/2015/05/krasivaya-devushka-albinos.jpg" alt="Image">
                         <hr>
 
                         <!-- Комментарий -->
@@ -274,6 +273,9 @@
 </script>
 <script>
     <#include "js/bootstrap.min.js">
+</script>
+<script>
+    <#include "js/errors.js">
 </script>
 </body>
 </html>
