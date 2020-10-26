@@ -16,63 +16,34 @@
                     Выбери свой абонемент
                 </div>
                 <div class="items_tick">
-                    <div class="item_low_tick">
-                        <div class="items_all_tick">
-                            <div class="item-item_tick1">Новичок</div>
-                            <span class="item-item_tick2">тариф</span></div>
-                        <div class="items_all_tick">
-                            <div class="text_tick">Персональный тренер на 6 мес.</div>
-                            <div class="text_tick">Программа тренировок и питания</div>
-                            <div class="text_tick">Приложение-трекер для занятий</div>
-                        </div>
-                        <div class="items-item_tick">
-                            <div class="price_tick">9 900Р / мес.</div>
-                            <div class="item_btn_tick">
-                                <form action="/FitnessRams_war/application">
-                                    <button class="btn_low_tick">Оставить заявку</button>
-                                </form>
+                    <#assign x = 1>
+                    <#list abonements as abonement>
+                        <div class="item_tick">
+                            <div class="items_all_tick">
+                                <div class="item-item_tick1">${abonement.name_abonement}</div>
+                                <span class="item-item_tick2">тариф</span></div>
+                            <div class="items_all_tick">
+                                <#list abonement.t as text>
+                                    <div class="text_tick">${text}</div>
+                                </#list>
+                            </div>
+                            <div class="items-item_tick">
+                                <div class="price_tick">${abonement.price}Р / мес.</div>
+                                <div class="item_btn_tick">
+                                    <form action="/FitnessRams_war/application" method="get">
+                                        <#if x == 1>
+                                            <button class="btn_low_tick" name="1" value="новичок" type="submit">Оставить заявку</button>
+                                        <#elseif x==2>
+                                            <button class="btn_middle_tick" type="submit"  value="профи" name="2">Оставить заявку</button>
+                                        <#elseif x==3>
+                                            <button class="btn_high_tick" type="submit" name="3" value="император">Оставить заявку</button>
+                                        </#if>
+                                    </form>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="item_middle_tick">
-                        <div class="items_all_tick">
-                            <div class="item-item_tick1">Профи</div>
-                            <span class="item-item_tick2">тариф</span></div>
-                        <div class="items_all_tick">
-                            <div class="text_tick">Персональный тренер на 6 мес.</div>
-                            <div class="text_tick">Программа тренировок и питания</div>
-                            <div class="text_tick">Приложение-трекер для занятий</div>
-                            <div class="text_tick">Чат с тренером</div>
-                        </div>
-                        <div class="items-item_tick">
-                            <div class="price_tick">11 900Р / мес.</div>
-                            <div class="item_btn_tick">
-                                <form action="application.ftl">
-                                    <button class="btn_middle_tick">Оставить заявку</button>
-                                </form>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="item_high_tick">
-                        <div class="items_all_tick">
-                            <div class="item-item_tick1">Император</div>
-                            <span class="item-item_tick2">тариф</span></div>
-                        <div class="items_all_tick">
-                            <div class="text_tick">Персональный тренер на 6 мес.</div>
-                            <div class="text_tick">Программа тренировок и питания</div>
-                            <div class="text_tick">Приложение-трекер для занятий</div>
-                            <div class="text_tick">Чат с тренером</div>
-                            <div class="text_tick">Бесплатное посещение сауны и бассейна</div>
-                        </div>
-                        <div class="items-item_tick">
-                            <div class="price_tick">13 900Р / мес.</div>
-                            <div class="item_btn_tick">
-                                <form action="application.ftl">
-                                    <button class="btn_high_tick">Оставить заявку</button>
-                                </form>
-                            </div>
-                        </div>
-                    </div>
+                        <#assign x+=1>
+                    </#list>
                 </div>
                 <div class="item_back_btn_tick">
                     <form action="/FitnessRams_war/home">

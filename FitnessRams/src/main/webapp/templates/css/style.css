@@ -756,6 +756,10 @@ label {
     height: 45px;
 }
 
+.help-color{
+    background:green;
+}
+
 .status_abonement_prof {
     color: black;
     font-family: Russo One, sans-serif;
@@ -763,6 +767,10 @@ label {
     font-weight: normal;
     font-size: 30px;
     line-height: 48px;
+}
+
+.font-helper{
+    color: white;
 }
 
 .body_team {
@@ -853,6 +861,15 @@ label {
 }
 
 .item_low_tick, .item_middle_tick, .item_high_tick {
+    background: #212121;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+.item_tick{
+    width: 28%;
+    padding: 20px 10px;
     background: #212121;
     border-radius: 10px;
     display: flex;
@@ -1109,8 +1126,8 @@ label {
 }
 
 .form_app {
-    width: 27%;
-    height: 50vh;
+    /*width: 27%;*/
+    /*height: 50vh;*/
 }
 
 .form_app label {

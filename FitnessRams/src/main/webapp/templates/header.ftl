@@ -8,7 +8,9 @@
 
         <#if user != "">
             <a class="item_home_menu" href="/FitnessRams_war/profile">Личный кабинет</a>
-            <a class="item_home_menu" href="/FitnessRams_war/hello">Выйти</a>
+            <form action="/FitnessRams_war/hello" method="post">
+                <button class="item_home_menu" type="submit">Выйти</button>
+            </form>
         <#else >
             <a class="item_home_menu" href="/FitnessRams_war/login">Войти</a>
         </#if>

@@ -1,7 +1,9 @@
 package controller;
 
+import dao.AbonementDao;
 import dao.LoginDao;
 import dao.ProfileDao;
+import model.Abonement;
 import model.User;
 import org.apache.commons.fileupload.FileItem;
 import org.apache.commons.fileupload.FileUploadException;
@@ -82,6 +84,7 @@ public class ProfileServlet extends HttpServlet {
         req.setAttribute("error_email", "");
         if (redactUser.equals("SUCCESS")) {
             req.setAttribute("user", user);
+//            resp.sendRedirect("/FitnessRams_war/profile");
             RequestDispatcher requestDispatcher = req.getRequestDispatcher("templates/redactProfile.ftl");
             requestDispatcher.forward(req, resp);
         }
@@ -91,7 +94,14 @@ public class ProfileServlet extends HttpServlet {
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         req.setCharacterEncoding("UTF-8");
         User user = (User) req.getSession().getAttribute("user");
-
+        if (user.getStatus_abonement() == 1) {
+            System.out.println(user.getStatus_abonement());
+            System.out.println(user.getAbonement_id());
+            Abonement abonement = AbonementDao.getAbonement(user.getAbonement_id());
+            user.setAbonement(abonement);
+            System.out.println(user.getAbonement().getName_abonement());
+        }
+        req.getSession().setAttribute("user",user);
         req.setAttribute("user", user);
         RequestDispatcher requestDispatcher = req.getRequestDispatcher("templates/redactProfile.ftl");
         requestDispatcher.forward(req, resp);

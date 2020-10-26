@@ -31,7 +31,7 @@
                     <span>Абонемент в фитнес-клуб всего за 9990р</span>
                 </div>
                 <div>
-                    <form action="/FitnessRams_war/ticket">
+                    <form action="/FitnessRams_war/ticket" method="get">
                         <button class="btn_home">
                             <span class="text_home">Выбрать абонемент</span>
                         </button>

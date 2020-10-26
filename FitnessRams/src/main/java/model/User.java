@@ -9,6 +9,24 @@ public class User {
     private String img;
     private int status_abonement;
     private String phone;
+    private int abonement_id;
+    private Abonement abonement;
+
+    public int getAbonement_id() {
+        return abonement_id;
+    }
+
+    public void setAbonement_id(int abonement_id) {
+        this.abonement_id = abonement_id;
+    }
+
+    public Abonement getAbonement() {
+        return abonement;
+    }
+
+    public void setAbonement(Abonement abonement) {
+        this.abonement = abonement;
+    }
 
     public String getPhone() {
         return phone;

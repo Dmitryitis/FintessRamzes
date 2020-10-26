@@ -31,6 +31,11 @@
                                 <span class="text_check_prof">Посмотреть расписание</span>
                             </button>
                         </form>
+                        <#if user.status_abonement != 0>
+                            <form action="#">
+                                <button class="btn_check_prof" data-toggle="modal" data-target="#abonement">Посмотреть абонемент</button>
+                            </form>
+                        </#if>
                     </div>
                     <div class="container_personal_items_prof">
                         <div class="personal_items_prof">
@@ -53,7 +58,8 @@
                                     <div class="inp_prof">${user.phone}</div>
                                 </div>
 
-                                <form action="/FitnessRams_war/redactProfile" method="get" class="btn_save_prof item-item_prof">
+                                <form action="/FitnessRams_war/redactProfile" method="get"
+                                      class="btn_save_prof item-item_prof">
                                     <button class="btn_item_prof">Редактировать</button>
                                 </form>
                             </div>
@@ -61,12 +67,15 @@
                         <div>
                             <div class="status_prof">
                                 <span class="text_status_prof">Статус абонемента</span>
-                                <div class="item_status_prof">
-                                    <#if user.status_abonement == 0>
+                                <#if user.status_abonement == 0>
+                                    <div class="item_status_prof">
                                         <span class="status_abonement_prof">Нет</span>
-                                    </#if>
-
-                                </div>
+                                    </div>
+                                <#else>
+                                    <div class="item_status_prof help-color">
+                                        <span class="status_abonement_prof font-helper">Да</span>
+                                    </div>
+                                </#if>
                             </div>
                         </div>
                     </div>
@@ -120,5 +129,52 @@
         </div>
     </div>
 </div>
+<#if user.status_abonement != 0>
+    <div class="modal fade" id="abonement" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body modal__team">
+                    <div class="modal__team-photo">
+                        <img src="templates/assets/abonement.jpg" alt="" class="modal__team-img">
+                    </div>
+                    <div class="modal__team-content">
+                        <div class="modal__team-name">
+                            Добро пожаловать в наш клуб!
+                        </div>
+                        <div class="modal__team-surname">
+                            Тип абонемента: ${user.abonement.name_abonement}
+                        </div>
+                        <#list user.abonement.t as text>
+                            <div class="modal__team-about">${text}</div>
+                        </#list>
+                        <div class="modal__team-about">Цена: ${user.abonement.price}Р</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</#if>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<link rel="stylesheet" type="text/css"
+      href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+<script type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css"
+      rel="stylesheet"/>
+<script>
+    <#include "js/app.js">
+</script>
+<script>
+    <#include "js/bootstrap.min.js">
+</script>
 </body>
 </html>
