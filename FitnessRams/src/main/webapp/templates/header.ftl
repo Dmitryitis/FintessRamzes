@@ -7,7 +7,9 @@
         <a class="item_home_menu" href="/FitnessRams_war/team">Команда</a>
 
         <#if user != "">
-            <a class="item_home_menu" href="/FitnessRams_war/profile">Личный кабинет</a>
+            <form action="/FitnessRams_war/profile" method="get">
+                <button class="item_home_menu help-profile" type="submit">Личный кабинет</button>
+            </form>
             <form action="/FitnessRams_war/hello" method="post">
                 <button class="item_home_menu" type="submit">Выйти</button>
             </form>

@@ -35,13 +35,14 @@ public class LoginFilter implements Filter {
 
             if (req.getParameter("cookie") != null){
                 Cookie cookie = new Cookie("username",user.getEmail());
-                Cookie cookie1 = new Cookie("password",user.getPassword());
-                Cookie cookie2 = new Cookie("id",user.getId());
                 cookie.setMaxAge(60*60*24*30);
-                cookie1.setMaxAge(60*60*24*30);
-                cookie2.setMaxAge(60*60*24*30);
                 res.addCookie(cookie);
+                Cookie cookie1 = new Cookie("password",user.getPassword());
+                cookie1.setMaxAge(60*60*24*30);
                 res.addCookie(cookie1);
+
+                Cookie cookie2 = new Cookie("id",user.getId());
+                cookie2.setMaxAge(60*60*24*30);
                 res.addCookie(cookie2);
             }
             session.setAttribute("user",user);

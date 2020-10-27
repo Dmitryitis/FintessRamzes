@@ -4,7 +4,6 @@ import model.Abonement;
 import model.User;
 import utilite.DBConnector;
 
-import javax.jws.soap.SOAPBinding;
 import java.sql.*;
 import java.util.ArrayList;
 
@@ -48,7 +47,7 @@ public class AbonementDao {
         Connection con = DBConnector.createConnection();
         try {
             Statement statement = con.createStatement();
-            ResultSet resultSet = statement.executeQuery("select * from abonement where idabonement = " + abonement_id);
+            ResultSet resultSet = statement.executeQuery("select * from abonement where idabonement = " + abonement_id+";");
             while (resultSet.next()) {
                 idabonement = resultSet.getInt("idabonement");
                 name_abonement = resultSet.getString("name_abonement");

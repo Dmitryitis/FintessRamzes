@@ -388,6 +388,15 @@ ul {
     min-height: 90vh;
 }
 
+.help-profile{
+    background: none;
+    border: 0;
+}
+
+.help-profile:focus{
+    outline: 0;
+}
+
 .name_prog {
     font-weight: bold;
     font-size: 30px;

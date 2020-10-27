@@ -1,6 +1,7 @@
 package controller;
 
 import dao.AbonementDao;
+import dao.ProfileDao;
 import model.Abonement;
 import model.User;
 
@@ -28,7 +29,6 @@ public class ApplicationServlet extends HttpServlet {
         }
         req.setAttribute("error_app", "");
         req.setAttribute("user", "");
-        System.out.println(id_abonement);
         RequestDispatcher requestDispatcher = req.getRequestDispatcher("templates/application.ftl");
         requestDispatcher.forward(req, resp);
     }
@@ -44,9 +44,16 @@ public class ApplicationServlet extends HttpServlet {
         } else {
             User user = (User) req.getSession().getAttribute("user");
             if (user.getStatus_abonement() == 1) {
-                Abonement abonement = AbonementDao.getAbonement(user.getAbonement_id());
-                user.setAbonement(abonement);
-                req.setAttribute("error_app", "У вас уже есть абонемент посмотрите в личном кабинете");
+                if (email.equals(user.getEmail())) {
+                    ProfileDao.getUser(user);
+
+
+                    Abonement abonement = AbonementDao.getAbonement(user.getAbonement_id());
+                    user.setAbonement(abonement);
+                    req.setAttribute("error_app", "У вас уже есть абонемент посмотрите в личном кабинете");
+                } else {
+                    req.setAttribute("error_app", "Неправильный email, посмотрите в личном кабинете");
+                }
             } else {
                 if (email.equals(user.getEmail())){
                     System.out.println("urer");

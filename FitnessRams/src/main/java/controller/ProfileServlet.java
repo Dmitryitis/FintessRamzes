@@ -84,9 +84,9 @@ public class ProfileServlet extends HttpServlet {
         req.setAttribute("error_email", "");
         if (redactUser.equals("SUCCESS")) {
             req.setAttribute("user", user);
-//            resp.sendRedirect("/FitnessRams_war/profile");
-            RequestDispatcher requestDispatcher = req.getRequestDispatcher("templates/redactProfile.ftl");
-            requestDispatcher.forward(req, resp);
+            resp.sendRedirect("/FitnessRams_war/profile");
+//            RequestDispatcher requestDispatcher = req.getRequestDispatcher("templates/redactProfile.ftl");
+//            requestDispatcher.forward(req, resp);
         }
     }
 
@@ -95,6 +95,7 @@ public class ProfileServlet extends HttpServlet {
         req.setCharacterEncoding("UTF-8");
         User user = (User) req.getSession().getAttribute("user");
         if (user.getStatus_abonement() == 1) {
+            ProfileDao.getUser(user);
             System.out.println(user.getStatus_abonement());
             System.out.println(user.getAbonement_id());
             Abonement abonement = AbonementDao.getAbonement(user.getAbonement_id());

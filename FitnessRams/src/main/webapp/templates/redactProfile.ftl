@@ -25,16 +25,14 @@
             <div class="col 12">
                 <div class="items_prof">
                     <div class="photo_prof">
-                        <img class="photo_item_prof" src="${user.img}" alt="photo profile">
+                        <img class="photo_item_prof" src="/FitnessRams_war/img" alt="photo profile">
                         <form action="/FitnessRams_war/schedule">
                             <button class="btn_check_prof">
                                 <span class="text_check_prof">Посмотреть расписание</span>
                             </button>
                         </form>
                         <#if user.status_abonement != 0>
-                            <form action="#">
                                 <button class="btn_check_prof" data-toggle="modal" data-target="#abonement">Посмотреть абонемент</button>
-                            </form>
                         </#if>
                     </div>
                     <div class="container_personal_items_prof">

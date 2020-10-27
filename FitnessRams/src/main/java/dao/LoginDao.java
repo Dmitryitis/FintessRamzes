@@ -42,6 +42,7 @@ public class LoginDao {
                     return result;
                 }
             }
+            con.close();
         } catch (SQLException throwables) {
             throwables.printStackTrace();
         }
@@ -64,7 +65,7 @@ public class LoginDao {
                     return true;
                 }
             }
-
+            con.close();
         } catch (SQLException throwables) {
             throwables.printStackTrace();
         }

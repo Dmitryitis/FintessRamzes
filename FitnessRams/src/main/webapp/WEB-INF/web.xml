@@ -205,6 +205,15 @@
         <servlet-name>RedactProfileServlet</servlet-name>
         <url-pattern>/redactProfile</url-pattern>
     </servlet-mapping>
+
+    <servlet>
+        <servlet-name>ImgServlet</servlet-name>
+        <servlet-class>controller.ImgServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ImgServlet</servlet-name>
+        <url-pattern>/img</url-pattern>
+    </servlet-mapping>
     
 
 </web-app>

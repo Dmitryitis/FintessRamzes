@@ -18,10 +18,10 @@ public class HomeServlet extends HttpServlet {
             Cookie[] cookies = req.getCookies();
             User user = new User();
 
-
-            user.setEmail(cookies[0].getValue());
-            user.setPassword(cookies[1].getValue());
-            user.setId(cookies[2].getValue());
+            System.out.println(cookies[0].getValue());
+            user.setEmail(cookies[1].getValue());
+            user.setPassword(cookies[2].getValue());
+            user.setId(cookies[3].getValue());
             System.out.println(user.getPassword());
             user = LoginDao.auth(user);
 
@@ -40,32 +40,6 @@ public class HomeServlet extends HttpServlet {
             req.setAttribute("comment_error", "Вы не вошли в систему");
             RequestDispatcher requestDispatcher = req.getRequestDispatcher("templates/home.ftl");
             requestDispatcher.forward(req, resp);
-//            User user = new User();
-//            Cookie[] cookies = req.getCookies();
-//            System.out.println(cookies.length);
-//            if (cookies.length > 1) {
-//                System.out.println(cookies.length);
-//                System.out.println(cookies[1].getValue());
-//                user.setEmail(cookies[1].getValue());
-//                user.setPassword(cookies[2].getValue());
-//                user.setId(cookies[3].getValue());
-//                user = LoginDao.auth(user);
-//                req.getSession().setAttribute("user", user);
-//                req.setAttribute("user", user);
-//            } else {
-//                req.getSession().setAttribute("user", "");
-//                ;
-//                req.setAttribute("user", "");
-//            }
-//
-//            if (req.getSession().getAttribute("user") == "") {
-//                req.setAttribute("comment_error", "Вы не вошли в систему");
-//            } else {
-//                req.setAttribute("comment_error", "");
-//            }
-//            req.setAttribute("error", "");
-//            RequestDispatcher requestDispatcher = req.getRequestDispatcher("templates/home.ftl");
-//            requestDispatcher.forward(req, resp);
         }
     }
 

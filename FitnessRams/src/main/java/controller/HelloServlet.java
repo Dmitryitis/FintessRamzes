@@ -11,7 +11,7 @@ public class HelloServlet extends HttpServlet {
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         Cookie[] cookies = req.getCookies();
 
-        if (cookies.length <2) {
+        if (cookies.length < 2) {
             req.getSession().setAttribute("user", "");
             req.setAttribute("user", "");
             RequestDispatcher requestDispatcher = req.getRequestDispatcher("templates/index.ftl");

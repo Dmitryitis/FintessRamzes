@@ -35,7 +35,8 @@ public class ProgramDao {
                 img = resultSet.getString("img");
                 Program program = new Program(idprogram,name_program,time,level,text,search_name,img);
                 programs.add(program);
-            };
+            }
+            con.close();
         } catch (SQLException throwables) {
             throwables.printStackTrace();
         }

@@ -3,9 +3,7 @@ package dao;
 import model.User;
 import utilite.DBConnector;
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.SQLException;
+import java.sql.*;
 
 public class ProfileDao {
     public static String redactUser(User user) {
@@ -50,10 +48,35 @@ public class ProfileDao {
                     return "SUCCESS";
                 }
             }
-
+            con.close();
         } catch (SQLException throwables) {
             throwables.printStackTrace();
         }
         return "";
+    }
+
+    public static User getUser(User user){
+        int abonement_id = 0;
+        String email = user.getEmail();
+        System.out.println(email);
+        String query = "select * from user";
+
+        Connection con = DBConnector.createConnection();
+        try {
+            Statement statement = con.createStatement();
+            ResultSet resultSet = statement.executeQuery(query);
+            while (resultSet.next()){
+                if (email.equals(resultSet.getString("email"))){
+                    abonement_id = resultSet.getInt("abonement_id");
+                    System.out.println("uraaa");
+                    System.out.println(abonement_id);
+                    user.setAbonement_id(abonement_id);
+                }
+            }
+            con.close();
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
+        return user;
     }
 }

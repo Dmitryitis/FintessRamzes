@@ -32,6 +32,7 @@ public class RegistrationDao {
             if (i != 0){
                 return "SUCCESS";
             }
+            con.close();
         } catch (SQLException throwables) {
             throwables.printStackTrace();
         }

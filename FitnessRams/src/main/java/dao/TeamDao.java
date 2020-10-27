@@ -44,6 +44,7 @@ public class TeamDao {
                 Team team = new Team(id, name, surname, about, exp, phone, img, team_id, vk_link, whats_link);
                 teams.add(team);
             }
+            con.close();
         } catch (SQLException throwables) {
             throwables.printStackTrace();
         }

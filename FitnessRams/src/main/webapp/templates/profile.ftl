@@ -62,14 +62,6 @@
                                 </div>
                             </div>
                         </div>
-                        <#--                        <div>-->
-                        <#--                            <div class="status_prof">-->
-                        <#--                                <span class="text_status_prof">Статус абонемента</span>-->
-                        <#--                                <div class="item_status_prof">-->
-                        <#--                                    <span class="status_abonement_prof">Нет</span>-->
-                        <#--                                </div>-->
-                        <#--                            </div>-->
-                        <#--                        </div>-->
                     </div>
                 </form>
             </div>
