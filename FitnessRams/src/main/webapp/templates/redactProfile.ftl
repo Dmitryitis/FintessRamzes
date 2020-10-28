@@ -26,7 +26,7 @@
                 <div class="items_prof">
                     <div class="photo_prof">
                         <img class="photo_item_prof" src="/FitnessRams_war/img" alt="photo profile">
-                        <form action="/FitnessRams_war/schedule">
+                        <form action="/FitnessRams_war/schedule" method="get">
                             <button class="btn_check_prof">
                                 <span class="text_check_prof">Посмотреть расписание</span>
                             </button>

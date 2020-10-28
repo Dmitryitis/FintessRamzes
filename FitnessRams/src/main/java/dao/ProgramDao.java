@@ -42,4 +42,30 @@ public class ProgramDao {
         }
         return programs;
     }
+
+    public static Program getProgram(int program_id){
+        Program program = new Program();
+
+        Connection con = DBConnector.createConnection();
+
+        try {
+            Statement statement = con.createStatement();
+            ResultSet resultSet = statement.executeQuery("select * from program");
+            while (resultSet.next()){
+                if (program_id == resultSet.getInt("idprogram")){
+                    program.setIdprogram(resultSet.getInt("idprogram"));
+                    program.setName_program(resultSet.getString("name_program"));
+                    program.setTime(resultSet.getInt("time"));
+                    program.setText(resultSet.getString("text"));
+                    program.setLevel(resultSet.getString("level"));
+                    program.setSearch_name(resultSet.getString("search_name"));
+                    program.setImg(resultSet.getString("img"));
+                    return program;
+                }
+            }
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
+        return program;
+    }
 }

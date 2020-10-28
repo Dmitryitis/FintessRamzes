@@ -12,6 +12,8 @@ public class Team {
     private String vk_link;
     private String whats_link;
 
+    public Team(){}
+
     public Team(int id, String name, String surname, String about, int exp, String phone, String img, String team_id, String vk_link, String whats_link) {
         this.id = id;
         this.name = name;

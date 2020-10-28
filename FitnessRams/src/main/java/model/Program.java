@@ -9,6 +9,10 @@ public class Program {
     private String img;
     private String search_name;
 
+    public Program(){
+
+    }
+
     public Program(int idprogram, String name_program, int time, String level, String text, String search_name, String img) {
         this.idprogram = idprogram;
         this.name_program = name_program;
