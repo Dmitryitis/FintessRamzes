@@ -16,17 +16,17 @@ public class ProfileDao {
         Connection con = DBConnector.createConnection();
 
         try {
-            if (user.getImg() == null){
+            if (user.getImg() == null) {
                 String query = "UPDATE user SET username = ?, surname = ?, email = ?, phone = ? WHERE iduser = ?";
                 PreparedStatement preparedStatement = con.prepareStatement(query);
-                preparedStatement.setString(1,username);
-                preparedStatement.setString(2,surname);
-                preparedStatement.setString(3,email);
-                preparedStatement.setString(4,phone);
-                preparedStatement.setString(5,user.getId());
+                preparedStatement.setString(1, username);
+                preparedStatement.setString(2, surname);
+                preparedStatement.setString(3, email);
+                preparedStatement.setString(4, phone);
+                preparedStatement.setString(5, user.getId());
 
                 int i = preparedStatement.executeUpdate();
-                if (i != 0){
+                if (i != 0) {
                     preparedStatement.close();
                     con.close();
                     return "SUCCESS";
@@ -34,15 +34,15 @@ public class ProfileDao {
             } else {
                 String query = "UPDATE user SET username = ?, surname = ?, email = ?, phone = ?, img = ? WHERE iduser = ?";
                 PreparedStatement preparedStatement = con.prepareStatement(query);
-                preparedStatement.setString(1,username);
-                preparedStatement.setString(2,surname);
-                preparedStatement.setString(3,email);
-                preparedStatement.setString(4,phone);
-                preparedStatement.setString(5,user.getImg());
-                preparedStatement.setString(6,user.getId());
+                preparedStatement.setString(1, username);
+                preparedStatement.setString(2, surname);
+                preparedStatement.setString(3, email);
+                preparedStatement.setString(4, phone);
+                preparedStatement.setString(5, user.getImg());
+                preparedStatement.setString(6, user.getId());
 
                 int i = preparedStatement.executeUpdate();
-                if (i != 0){
+                if (i != 0) {
                     preparedStatement.close();
                     con.close();
                     return "SUCCESS";
@@ -55,7 +55,7 @@ public class ProfileDao {
         return "";
     }
 
-    public static User getUser(User user){
+    public static User getUser(User user) {
         int abonement_id = 0;
         String email = user.getEmail();
         System.out.println(email);
@@ -65,13 +65,35 @@ public class ProfileDao {
         try {
             Statement statement = con.createStatement();
             ResultSet resultSet = statement.executeQuery(query);
-            while (resultSet.next()){
-                if (email.equals(resultSet.getString("email"))){
+            while (resultSet.next()) {
+                if (email.equals(resultSet.getString("email"))) {
                     abonement_id = resultSet.getInt("abonement_id");
                     System.out.println("uraaa");
                     System.out.println(abonement_id);
                     user.setAbonement_id(abonement_id);
                 }
+            }
+            con.close();
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
+        return user;
+    }
+
+    public static User getUserForId(int iduser) {
+        User user = new User();
+
+        String query = "select * from user where iduser = " + iduser;
+
+        Connection con = DBConnector.createConnection();
+        try {
+            Statement statement = con.createStatement();
+            ResultSet resultSet = statement.executeQuery(query);
+            while (resultSet.next()) {
+               user.setId(String.valueOf(resultSet.getInt("iduser")));
+               user.setImg(resultSet.getString("img"));
+               user.setUsername(resultSet.getString("username"));
+               user.setSurname(resultSet.getString("surname"));
             }
             con.close();
         } catch (SQLException throwables) {

@@ -174,7 +174,7 @@
                     </div>
                 </div>
 
-                <form action="/FitnessRams_war/home" method="get">
+                <form action="/FitnessRams_war/comment" method="get">
                         <textarea class="form-control" name="comment" rows="2"
                                   placeholder="Добавьте Ваш комментарий"></textarea>
                     <div class="mar-top clearfix">
@@ -183,64 +183,29 @@
                             Добавить
                         </button>
                         <div class="error" id="comment-error" style="color: white">${comment_error}</div>
-<#--                        <a class="btn btn-trans btn-icon fa fa-video-camera add-tooltip" href="#"></a>-->
-<#--                        <a class="btn btn-trans btn-icon fa fa-camera add-tooltip" href="#"></a>-->
-<#--                        <a class="btn btn-trans btn-icon fa fa-file add-tooltip" href="#"></a>-->
+                        <#--                        <a class="btn btn-trans btn-icon fa fa-video-camera add-tooltip" href="#"></a>-->
+                        <#--                        <a class="btn btn-trans btn-icon fa fa-camera add-tooltip" href="#"></a>-->
+                        <#--                        <a class="btn btn-trans btn-icon fa fa-file add-tooltip" href="#"></a>-->
                     </div>
                 </form>
             </div>
         </div>
         <div class="panel">
             <div class="panel-body">
-                <!-- Содержание Новостей -->
-                <!--===================================================-->
-                <div class="media-block">
-                    <a class="media-left" href="#"><img class="img-circle img-sm" alt="Профиль пользователя"
-                                                        src="https://bootstraptema.ru/snippets/icons/2016/mia/1.png"></a>
-                    <div class="media-body">
-                        <div class="mar-btm">
-                            <a href="#" class="btn-link text-semibold media-heading box-inline">Максим</a>
-                            <p class="text-muted text-sm"><i class="fa fa-mobile fa-lg"></i> - 19-06-2016</p>
-                        </div>
-                        <p>Секция с комментариями для сайта с подключенным Bootstrap!!!</p>
-                        <hr>
-                    </div>
-                </div>
-                <!--===================================================-->
-                <!-- Конец Содержания Новостей -->
-
-
-                <!-- Содержание Новостей -->
-                <!--===================================================-->
-                <div class="media-block pad-all">
-                    <a class="media-left" href="#"><img class="img-circle img-sm" alt="Профиль пользователя"
-                                                        src="https://bootstraptema.ru/snippets/icons/2016/mia/4.png"></a>
-                    <div class="media-body">
-                        <div class="mar-btm">
-                            <a href="#" class="btn-link text-semibold media-heading box-inline">Ирина</a>
-                            <p class="text-muted text-sm"><i class="fa fa-mobile fa-lg"></i> - 20-06-2016</p>
-                        </div>
-                        <p>А я добавлю картинку</p>
-                        <hr>
-
-                        <!-- Комментарий -->
-                        <div>
-                            <div class="media-block pad-all">
-                                <a class="media-left" href="#"><img class="img-circle img-sm" alt="Профиль пользователя"
-                                                                    src="https://bootstraptema.ru/snippets/icons/2016/mia/5.png"></a>
-                                <div class="media-body">
-                                    <div class="mar-btm">
-                                        <a href="#" class="btn-link text-semibold media-heading box-inline">Коля</a>
-                                        <p class="text-muted text-sm"><i class="fa fa-globe fa-lg"></i> - 20-06-2016</p>
-                                    </div>
-                                </div>
-                                <p>Дима Лох</p>
+                <#list comments as comment>
+                    <div class="media-block">
+                        <a class="media-left" href="#"><img class="img-circle img-sm" alt="Профиль пользователя"
+                                                            src="${comment.user.img}"></a>
+                        <div class="media-body">
+                            <div class="mar-btm">
+                                <a href="#" class="btn-link text-semibold media-heading box-inline">${comment.user.username} ${comment.user.surname}</a>
+                                <p class="text-muted text-sm"><i class="fa fa-mobile fa-lg"></i>${comment.date_comment}</p>
                             </div>
+                            <p>${comment.text_comment}</p>
+                            <hr>
                         </div>
-                        <!--===================================================-->
-                        <!-- Конец Содержания Новостей -->
                     </div>
-                </div>
+                </#list>
             </div>
         </div>
     </div>
