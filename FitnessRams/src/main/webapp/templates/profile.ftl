@@ -47,13 +47,14 @@
                             <div class="item_prof">
                                 <span>ПОЧТА</span>
                                 <label>
-                                    <input class="inp_prof" type="text" name="email">
+                                    <input class="inp_prof" type="text" name="email" pattern="^([a-z0-9_\.-])+@[a-z0-9-]+\.([a-z]{2,4}\.)?[a-z]{2,4}$">
+                                    <span class="form_error">Это поле должно содержать E-Mail в формате example@site.com</span>
                                 </label>
 
                                 <div class="item-item_prof">
                                     <span>Phone</span>
                                     <label>
-                                        <input class="inp_prof" type="text" name="phone">
+                                        <input class="inp_prof" id="phone" type="text" name="phone">
                                     </label>
                                 </div>
                                 <div class="btn_save_prof item-item_prof">
@@ -113,5 +114,14 @@
         </div>
     </div>
 </div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery.maskedinput@1.4.1/src/jquery.maskedinput.min.js" type="text/javascript"></script>
+<script src="js/check.js"></script>
+<script>
+    $(function (){
+        $('#phone').mask("+7 (999) 999-9999");
+    });
+</script>
 </body>
 </html>

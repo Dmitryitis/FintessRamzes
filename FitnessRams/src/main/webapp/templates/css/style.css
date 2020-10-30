@@ -1036,6 +1036,12 @@ label {
     width: 60%;
 }
 
+.my_login{
+    padding: 15px;
+    margin-bottom: 15px;
+}
+
+
 .hide {
     display: none;
 }

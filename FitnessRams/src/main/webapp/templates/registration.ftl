@@ -6,6 +6,12 @@
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css"
           rel="stylesheet"/>
     <style>
+        <#include "css/bootstrap/bootstrap-grid.min.css">
+    </style>
+    <style>
+        <#include "css/bootstrap/bootstrap.min.css">
+    </style>
+    <style>
         <#include "css/style.css">
     </style>
 </head>
@@ -22,7 +28,8 @@
                             <div>${error}</div>
                             <label for="email"><span class="item_log">ЛОГИН</span></label>
                             <div class="form_field">
-                                <input class="inp_log" type="email" placeholder="Введите email" name="email" id="email">
+                                <input class="inp_log my_login" type="text" placeholder="Введите email" name="email" size="20"
+                                       id="email" pattern="^([a-z0-9_\.-])+@[a-z0-9-]+\.([a-z]{2,4}\.)?[a-z]{2,4}$">
                                 <span class="form_error">Это поле должно содержать E-Mail в формате example@site.com</span>
                             </div>
 
@@ -45,7 +52,6 @@
                                        onfocus="CountPass('pass_id')"
                                        onkeyup="CountPass('pass_id')" required>
 
-                                <span class="form_error">Это поле должно содержать E-Mail в формате example@site.com</span>
                             </div>
 
                             <label for="username"><span class="item_log">Имя</span></label>
@@ -63,8 +69,8 @@
 
                             <label for="phone"><span class="item_log">Телефон</span></label>
                             <div class="form_field">
-                                <input class="inp_log" type="tel" placeholder="Введите ваш номер телефона" name="phone"
-                                       id="phone">
+                                <input type="text" name="phone"
+                                       id="phone" class="input-medium bfh-phone inp_log my_login" placeholder="Введите ваш номер телефона" required>
                             </div>
 
                             <div class="items_btn_log">
@@ -78,6 +84,13 @@
         </div>
     </div>
 </div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery.maskedinput@1.4.1/src/jquery.maskedinput.min.js" type="text/javascript"></script>
 <script src="js/check.js"></script>
+<script>
+    $(function (){
+       $('#phone').mask("+7 (999) 999-9999");
+    });
+</script>
 </body>
 </html>

@@ -11,7 +11,6 @@
         <servlet-name>freemarker</servlet-name>
         <servlet-class>freemarker.ext.servlet.FreemarkerServlet</servlet-class>
 
-
         <init-param>
             <param-name>TemplatePath</param-name>
             <param-value>/</param-value>
@@ -24,7 +23,6 @@
             <param-name>ContentType</param-name>
             <param-value>text/html; charset=UTF-8</param-value>
         </init-param>
-
 
         <init-param>
             <param-name>template_update_delay</param-name>
@@ -48,7 +46,6 @@
         <url-pattern>*.ftl</url-pattern>
         <url-pattern>*.ftlh</url-pattern>
     </servlet-mapping>
-
 
     <security-constraint>
         <web-resource-collection>
@@ -218,6 +215,5 @@
         <servlet-name>ImgServlet</servlet-name>
         <url-pattern>/img</url-pattern>
     </servlet-mapping>
-    
 
 </web-app>

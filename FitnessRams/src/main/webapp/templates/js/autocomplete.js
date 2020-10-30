@@ -9,7 +9,7 @@ function autocomplete(inp, arr) {
         a.setAttribute("id", this.id + "autocomplete-list");
         a.setAttribute("class", "autocomplete-items");
         this.parentNode.appendChild(a);
-        /*for each item in the array...*/
+
         for (i = 0; i < arr.length; i++) {
             if (arr[i].substr(0, val.length).toUpperCase() === val.toUpperCase()) {
                 b = document.createElement("DIV");
@@ -70,5 +70,4 @@ function autocomplete(inp, arr) {
 
 var programs = ["Upper body", "Тренер по бодибилдингу", "Тренеровки с персональным тренером", "LEGS&BUTTS", "POSTURAL", "MAKE BODY", "CORE", "ICG Color Cycle", "HIIT", "AEROBIC TO BEGIN", "AERO CHALLENGE", "TAEKWON-DO", "BOXING", "MIX FIGHT", "MUAY THAI", "ORIENTATION CLASS", "AQUA BEGINNERS", "WARM UP", "AQUA SHAPE", "DANCE MIX", "FREESTYLE (R’N’B)", "BODY BALLET", "ORIENTAL", "Дискотека", "Заряжай-ка", "Игротека", "Йога"];
 
-/*initiate the autocomplete function on the "myInput" element, and pass along the countries array as possible autocomplete values:*/
 autocomplete(document.getElementById("search"), programs);
