@@ -30,11 +30,12 @@ public class CommentsServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         Object user = req.getSession().getAttribute("user");
+        req.setCharacterEncoding("UTF-8");
+
         if (user == null || user.equals("")) {
             System.out.println("blzzz");
             req.setAttribute("error", "Вы не вошли в систему");
             req.setAttribute("comment_error", "Вы не вошли в систему");
-            resp.sendRedirect("/FitnessRams_war/home");
         } else {
             String text_comment = req.getParameter("comment");
             System.out.println(text_comment);
@@ -48,7 +49,7 @@ public class CommentsServlet extends HttpServlet {
             if (!text_comment.equals("")){
                 String res = CommentDao.insert_comment(comment);
             }
-            resp.sendRedirect("/FitnessRams_war/home");
         }
+        resp.sendRedirect("/FitnessRams_war/home");
     }
 }

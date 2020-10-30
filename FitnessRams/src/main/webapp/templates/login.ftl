@@ -46,6 +46,10 @@
                         <form action="/FitnessRams_war/registration" method="get">
                             <button class="btn_log">Создать аккаунт</button>
                         </form>
+
+                        <form action="/FitnessRams_war/hello" method="get">
+                            <button class="btn_log">Вернуться на главную</button>
+                        </form>
                     </div>
                 </div>
             </div>

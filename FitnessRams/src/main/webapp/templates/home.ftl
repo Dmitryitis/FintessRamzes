@@ -212,7 +212,7 @@
 </div>
 <div class="footer">
     <div class="footer_items">
-        <a class="footer_items-item" href="#">Политика конфиденциальности</a>
+        <a class="footer_items-item" href="#" data-toggle="modal" data-target="#policy">Политика конфиденциальности</a>
         <a href="#">Обработка персональных данных</a>
     </div>
     <div class="footer_items">
@@ -224,6 +224,22 @@
     <div class="footer_items">
         <span class="footer_items-item">Где мы находимся:</span>
         <span>г. Казань, ул. Кремлевская д.35</span>
+    </div>
+</div>
+
+<div class="modal fade" id="policy" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <#include "policy.ftl">
+            </div>
+        </div>
     </div>
 </div>
 

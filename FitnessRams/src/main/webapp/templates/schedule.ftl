@@ -51,6 +51,19 @@
         </ul>
     </div> <!-- .timeline -->
 
+
+    <#macro schedu start_time end_time nameForBootstrap team_id name_program>
+        <li class="single-event" data-start="${start_time}" data-end="${end_time}"
+            data-toggle="modal" data-target="#${nameForBootstrap}"
+            data-content="event-yoga-1"
+            data-event="event-${team_id}">
+            <div class="as-a">
+                <span class="event-date">${start_time} - ${end_time}</span>
+                <em class="event-name">${name_program}</em>
+            </div>
+        </li>
+    </#macro>
+
     <div class="events">
         <ul class="wrap">
             <li class="events-group">
@@ -58,15 +71,8 @@
                 <ul>
                     <#list schedules as schedule>
                         <#if schedule.day == "Понедельник">
-                            <li class="single-event" data-start="${schedule.start_time}" data-end="${schedule.end_time}"
-                                data-toggle="modal" data-target="#${schedule.nameForBootstrap}"
-                                data-content="event-yoga-1"
-                                data-event="event-${schedule.team.id}">
-                                <div class="as-a">
-                                    <span class="event-date">${schedule.start_time} - ${schedule.end_time}</span>
-                                    <em class="event-name">${schedule.program.name_program}</em>
-                                </div>
-                            </li>
+                            <@schedu start_time=schedule.start_time end_time=schedule.end_time nameForBootstrap=schedule.nameForBootstrap
+                            team_id=schedule.team.id name_program=schedule.program.name_program/>
                         </#if>
                     </#list>
                 </ul>
@@ -78,15 +84,8 @@
                 <ul>
                     <#list schedules as schedule>
                         <#if schedule.day == "Вторник">
-                            <li class="single-event" data-start="${schedule.start_time}" data-end="${schedule.end_time}"
-                                data-toggle="modal" data-target="#${schedule.nameForBootstrap}"
-                                data-content="event-yoga-1"
-                                data-event="event-${schedule.team.id}">
-                                <div class="as-a">
-                                    <span class="event-date">${schedule.start_time} - ${schedule.end_time}</span>
-                                    <em class="event-name">${schedule.program.name_program}</em>
-                                </div>
-                            </li>
+                            <@schedu start_time=schedule.start_time end_time=schedule.end_time nameForBootstrap=schedule.nameForBootstrap
+                            team_id=schedule.team.id name_program=schedule.program.name_program/>
                         </#if>
                     </#list>
                 </ul>
@@ -98,15 +97,8 @@
                 <ul>
                     <#list schedules as schedule>
                         <#if schedule.day == "Среда">
-                            <li class="single-event" data-start="${schedule.start_time}" data-end="${schedule.end_time}"
-                                data-toggle="modal" data-target="#${schedule.nameForBootstrap}"
-                                data-content="event-yoga-1"
-                                data-event="event-${schedule.team.id}">
-                                <div class="as-a">
-                                    <span class="event-date">${schedule.start_time} - ${schedule.end_time}</span>
-                                    <em class="event-name">${schedule.program.name_program}</em>
-                                </div>
-                            </li>
+                            <@schedu start_time=schedule.start_time end_time=schedule.end_time nameForBootstrap=schedule.nameForBootstrap
+                            team_id=schedule.team.id name_program=schedule.program.name_program/>
                         </#if>
                     </#list>
                 </ul>
@@ -118,15 +110,8 @@
                 <ul>
                     <#list schedules as schedule>
                         <#if schedule.day == "Четверг">
-                            <li class="single-event" data-start="${schedule.start_time}" data-end="${schedule.end_time}"
-                                data-toggle="modal" data-target="#${schedule.nameForBootstrap}"
-                                data-content="event-yoga-1"
-                                data-event="event-${schedule.team.id}">
-                                <div class="as-a">
-                                    <span class="event-date">${schedule.start_time} - ${schedule.end_time}</span>
-                                    <em class="event-name">${schedule.program.name_program}</em>
-                                </div>
-                            </li>
+                            <@schedu start_time=schedule.start_time end_time=schedule.end_time nameForBootstrap=schedule.nameForBootstrap
+                            team_id=schedule.team.id name_program=schedule.program.name_program/>
                         </#if>
                     </#list>
                 </ul>
@@ -138,15 +123,8 @@
                 <ul>
                     <#list schedules as schedule>
                         <#if schedule.day == "Пятница">
-                            <li class="single-event" data-start="${schedule.start_time}" data-end="${schedule.end_time}"
-                                data-toggle="modal" data-target="#${schedule.nameForBootstrap}"
-                                data-content="event-yoga-1"
-                                data-event="event-${schedule.team.id}">
-                                <div class="as-a">
-                                    <span class="event-date">${schedule.start_time} - ${schedule.end_time}</span>
-                                    <em class="event-name">${schedule.program.name_program}</em>
-                                </div>
-                            </li>
+                            <@schedu start_time=schedule.start_time end_time=schedule.end_time nameForBootstrap=schedule.nameForBootstrap
+                            team_id=schedule.team.id name_program=schedule.program.name_program/>
 
                         </#if>
                     </#list>
@@ -158,15 +136,8 @@
                 <ul>
                     <#list schedules as schedule>
                         <#if schedule.day == "Суббота">
-                            <li class="single-event" data-start="${schedule.start_time}" data-end="${schedule.end_time}"
-                                data-toggle="modal" data-target="#${schedule.nameForBootstrap}"
-                                data-content="event-yoga-1"
-                                data-event="event-${schedule.team.id}">
-                                <div class="as-a">
-                                    <span class="event-date">${schedule.start_time} - ${schedule.end_time}</span>
-                                    <em class="event-name">${schedule.program.name_program}</em>
-                                </div>
-                            </li>
+                            <@schedu start_time=schedule.start_time end_time=schedule.end_time nameForBootstrap=schedule.nameForBootstrap
+                            team_id=schedule.team.id name_program=schedule.program.name_program/>
                         </#if>
                     </#list>
                 </ul>
@@ -177,15 +148,8 @@
                 <ul>
                     <#list schedules as schedule>
                         <#if schedule.day == "Воскресенье">
-                            <li class="single-event" data-start="${schedule.start_time}" data-end="${schedule.end_time}"
-                                data-toggle="modal" data-target="#${schedule.nameForBootstrap}"
-                                data-content="event-yoga-1"
-                                data-event="event-${schedule.team.id}">
-                                <div class="as-a">
-                                    <span class="event-date">${schedule.start_time} - ${schedule.end_time}</span>
-                                    <em class="event-name">${schedule.program.name_program}</em>
-                                </div>
-                            </li>
+                            <@schedu start_time=schedule.start_time end_time=schedule.end_time nameForBootstrap=schedule.nameForBootstrap
+                            team_id=schedule.team.id name_program=schedule.program.name_program/>
                         </#if>
                     </#list>
                 </ul>
@@ -200,219 +164,69 @@
     <div class="cover-layer"></div>
 </div> <!-- .cd-schedule -->
 
+<#macro modal nameForBootstrap img name_program start_time end_time text name surname>
+    <div class="modal fade" id="${nameForBootstrap}" tabindex="-1" role="dialog"
+         aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body modal__team">
+                    <div class="modal__team-photo">
+                        <img src="${img}" alt="" class="modal__team-img">
+                    </div>
+                    <div class="modal__team-content">
+                        <div class="modal__team-name">
+                            Название: ${name_program}
+                        </div>
+                        <div class="modal__team-surname">
+                            Время занятия: ${start_time} - ${end_time}
+                        </div>
+                        <div class="modal__team-about">Описание: ${text}</div>
+                        <div class="modal__team-experience">
+                            Тренер: ${name} ${surname}</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</#macro>
 
 <#list schedules as schedule>
     <#if schedule.day == "Понедельник">
-        <div class="modal fade" id="${schedule.nameForBootstrap}" tabindex="-1" role="dialog"
-             aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
-                    <div class="modal-body modal__team">
-                        <div class="modal__team-photo">
-                            <img src="${schedule.program.img}" alt="" class="modal__team-img">
-                        </div>
-                        <div class="modal__team-content">
-                            <div class="modal__team-name">
-                                Название: ${schedule.program.name_program}
-                            </div>
-                            <div class="modal__team-surname">
-                                Время занятия: ${schedule.start_time} - ${schedule.end_time}
-                            </div>
-                            <div class="modal__team-about">Описание: ${schedule.program.text}</div>
-                            <div class="modal__team-experience">
-                                Тренер: ${schedule.team.name} ${schedule.team.surname}</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+        <@modal nameForBootstrap=schedule.nameForBootstrap img=schedule.program.img name_program=schedule.program.name_program
+        start_time=schedule.start_time
+        end_time=schedule.end_time text=schedule.program.text name=schedule.team.name surname=schedule.team.surname/>
+
     <#elseif schedule.day == "Вторник">
-        <div class="modal fade" id="${schedule.nameForBootstrap}" tabindex="-1" role="dialog"
-             aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
-                    <div class="modal-body modal__team">
-                        <div class="modal__team-photo">
-                            <img src="${schedule.program.img}" alt="" class="modal__team-img">
-                        </div>
-                        <div class="modal__team-content">
-                            <div class="modal__team-name">
-                                Название: ${schedule.program.name_program}
-                            </div>
-                            <div class="modal__team-surname">
-                                Время занятия: ${schedule.start_time} - ${schedule.end_time}
-                            </div>
-                            <div class="modal__team-about">Описание: ${schedule.program.text}</div>
-                            <div class="modal__team-experience">
-                                Тренер: ${schedule.team.name} ${schedule.team.surname}</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+        <@modal nameForBootstrap=schedule.nameForBootstrap img=schedule.program.img name_program=schedule.program.name_program
+        start_time=schedule.start_time
+        end_time=schedule.end_time text=schedule.program.text name=schedule.team.name surname=schedule.team.surname/>
     <#elseif schedule.day == "Среда">
-        <div class="modal fade" id="${schedule.nameForBootstrap}" tabindex="-1" role="dialog"
-             aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
-                    <div class="modal-body modal__team">
-                        <div class="modal__team-photo">
-                            <img src="${schedule.program.img}" alt="" class="modal__team-img">
-                        </div>
-                        <div class="modal__team-content">
-                            <div class="modal__team-name">
-                                Название: ${schedule.program.name_program}
-                            </div>
-                            <div class="modal__team-surname">
-                                Время занятия: ${schedule.start_time} - ${schedule.end_time}
-                            </div>
-                            <div class="modal__team-about">Описание: ${schedule.program.text}</div>
-                            <div class="modal__team-experience">
-                                Тренер: ${schedule.team.name} ${schedule.team.surname}</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+        <@modal nameForBootstrap=schedule.nameForBootstrap img=schedule.program.img name_program=schedule.program.name_program
+        start_time=schedule.start_time
+        end_time=schedule.end_time text=schedule.program.text name=schedule.team.name surname=schedule.team.surname/>
     <#elseif schedule.day == "Четверг">
-        <div class="modal fade" id="${schedule.nameForBootstrap}" tabindex="-1" role="dialog"
-             aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
-                    <div class="modal-body modal__team">
-                        <div class="modal__team-photo">
-                            <img src="${schedule.program.img}" alt="" class="modal__team-img">
-                        </div>
-                        <div class="modal__team-content">
-                            <div class="modal__team-name">
-                                Название: ${schedule.program.name_program}
-                            </div>
-                            <div class="modal__team-surname">
-                                Время занятия: ${schedule.start_time} - ${schedule.end_time}
-                            </div>
-                            <div class="modal__team-about">Описание: ${schedule.program.text}</div>
-                            <div class="modal__team-experience">
-                                Тренер: ${schedule.team.name} ${schedule.team.surname}</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+        <@modal nameForBootstrap=schedule.nameForBootstrap img=schedule.program.img name_program=schedule.program.name_program
+        start_time=schedule.start_time
+        end_time=schedule.end_time text=schedule.program.text name=schedule.team.name surname=schedule.team.surname/>
     <#elseif schedule.day == "Пятница">
-        <div class="modal fade" id="${schedule.nameForBootstrap}" tabindex="-1" role="dialog"
-             aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
-                    <div class="modal-body modal__team">
-                        <div class="modal__team-photo">
-                            <img src="${schedule.program.img}" alt="" class="modal__team-img">
-                        </div>
-                        <div class="modal__team-content">
-                            <div class="modal__team-name">
-                                Название: ${schedule.program.name_program}
-                            </div>
-                            <div class="modal__team-surname">
-                                Время занятия: ${schedule.start_time} - ${schedule.end_time}
-                            </div>
-                            <div class="modal__team-about">Описание: ${schedule.program.text}</div>
-                            <div class="modal__team-experience">
-                                Тренер: ${schedule.team.name} ${schedule.team.surname}</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+        <@modal nameForBootstrap=schedule.nameForBootstrap img=schedule.program.img name_program=schedule.program.name_program
+        start_time=schedule.start_time
+        end_time=schedule.end_time text=schedule.program.text name=schedule.team.name surname=schedule.team.surname/>
     <#elseif schedule.day == "Суббота">
-        <div class="modal fade" id="${schedule.nameForBootstrap}" tabindex="-1" role="dialog"
-             aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
-                    <div class="modal-body modal__team">
-                        <div class="modal__team-photo">
-                            <img src="${schedule.program.img}" alt="" class="modal__team-img">
-                        </div>
-                        <div class="modal__team-content">
-                            <div class="modal__team-name">
-                                Название: ${schedule.program.name_program}
-                            </div>
-                            <div class="modal__team-surname">
-                                Время занятия: ${schedule.start_time} - ${schedule.end_time}
-                            </div>
-                            <div class="modal__team-about">Описание: ${schedule.program.text}</div>
-                            <div class="modal__team-experience">
-                                Тренер: ${schedule.team.name} ${schedule.team.surname}</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+        <@modal nameForBootstrap=schedule.nameForBootstrap img=schedule.program.img name_program=schedule.program.name_program
+        start_time=schedule.start_time
+        end_time=schedule.end_time text=schedule.program.text name=schedule.team.name surname=schedule.team.surname/>
     <#elseif schedule.day == "Воскресенье">
-        <div class="modal fade" id="${schedule.nameForBootstrap}" tabindex="-1" role="dialog"
-             aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
-                    <div class="modal-body modal__team">
-                        <div class="modal__team-photo">
-                            <img src="${schedule.program.img}" alt="" class="modal__team-img">
-                        </div>
-                        <div class="modal__team-content">
-                            <div class="modal__team-name">
-                                Название: ${schedule.program.name_program}
-                            </div>
-                            <div class="modal__team-surname">
-                                Время занятия: ${schedule.start_time} - ${schedule.end_time}
-                            </div>
-                            <div class="modal__team-about">Описание: ${schedule.program.text}</div>
-                            <div class="modal__team-experience">
-                                Тренер: ${schedule.team.name} ${schedule.team.surname}</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+        <@modal nameForBootstrap=schedule.nameForBootstrap img=schedule.program.img name_program=schedule.program.name_program
+        start_time=schedule.start_time
+        end_time=schedule.end_time text=schedule.program.text name=schedule.team.name surname=schedule.team.surname/>
     </#if>
 </#list>
-
-<#--<#list schedules as schedule>-->
-<#--    <#if schedule.day == "Пятница">-->
-<#--       -->
-<#--    </#if>-->
-<#--</#list>-->
 
 
 <div class="footer">

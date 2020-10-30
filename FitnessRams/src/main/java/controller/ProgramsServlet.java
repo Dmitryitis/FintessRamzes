@@ -36,7 +36,7 @@ public class ProgramsServlet extends HttpServlet {
         req.setAttribute("err", "");
 
         programs = ProgramDao.all_program();
-        if (search != null) {
+        if (search != null && !search.equals("")) {
             for (Program program : programs) {
                 boolean flag = KnuthMorrisPrathPatternSearch.patternOfSearch(program.getName_program(), search);
                 if (flag) {
@@ -44,8 +44,14 @@ public class ProgramsServlet extends HttpServlet {
                 }
 
             }
-        } else {
+        }  else {
             search_program.addAll(programs);
+            req.setAttribute("programs", search_program);
+            req.setAttribute("display", "none");
+            req.setAttribute("paginator","block");
+            RequestDispatcher requestDispatcher = req.getRequestDispatcher("templates/programs.ftl");
+            requestDispatcher.forward(req, resp);
+            return;
         }
 
         if (search_program.isEmpty()){
