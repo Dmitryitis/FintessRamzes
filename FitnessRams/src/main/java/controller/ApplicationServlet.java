@@ -20,11 +20,11 @@ public class ApplicationServlet extends HttpServlet {
         String abon1 = req.getParameter("1");
         String abon2 = req.getParameter("2");
         String abon3 = req.getParameter("3");
-        if (abon1 != null){
+        if (abon1 != null) {
             id_abonement = 1;
-        } else if (abon2 != null){
+        } else if (abon2 != null) {
             id_abonement = 2;
-        } else if (abon3 != null){
+        } else if (abon3 != null) {
             id_abonement = 3;
         }
         req.setAttribute("error_app", "");
@@ -37,10 +37,19 @@ public class ApplicationServlet extends HttpServlet {
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         req.setCharacterEncoding("UTF-8");
         String email = req.getParameter("email");
+        System.out.println("Email: "+ email);
+        String result = "";
 
+        if (email.equals("")) {
+            result = "";
+            resp.setContentType("text/plain");
+            System.out.println(result);
+            resp.setCharacterEncoding("UTF-8");
+            resp.getWriter().write(result);
+            return;
+        }
         if (req.getSession().getAttribute("user") == "") {
-            req.setAttribute("error_app", "Войдите в систему");
-            req.setAttribute("user", "");
+            result = "Войдите в систему";
         } else {
             User user = (User) req.getSession().getAttribute("user");
             if (user.getStatus_abonement() == 1) {
@@ -50,27 +59,31 @@ public class ApplicationServlet extends HttpServlet {
 
                     Abonement abonement = AbonementDao.getAbonement(user.getAbonement_id());
                     user.setAbonement(abonement);
-                    req.setAttribute("error_app", "У вас уже есть абонемент посмотрите в личном кабинете");
+                    result = "У вас уже есть абонемент посмотрите в личном кабинете";
                 } else {
-                    req.setAttribute("error_app", "Неправильный email, посмотрите в личном кабинете");
+                    result = "Неправильный email, посмотрите в личном кабинете";
                 }
+
             } else {
-                if (email.equals(user.getEmail())){
+                if (email.equals(user.getEmail())) {
                     System.out.println("urer");
                     user.setStatus_abonement(1);
                     user.setAbonement_id(id_abonement);
                     String res = AbonementDao.updateAbonement(user);
-                    if (res.equals("SUCCESS")){
+                    if (res.equals("SUCCESS")) {
                         Abonement abonement = AbonementDao.getAbonement(user.getAbonement_id());
                         user.setAbonement(abonement);
-                        req.setAttribute("error_app", "Ваша заявка отправлена \n Зайдите в личный кабиенет");
+                        result = "Ваша заявка отправлена. Зайдите в личный кабиенет";
                     }
                 } else {
-                    req.setAttribute("error_app", "Неправильный email, посмотриие в личном кабинете");
+                    result = "Неправильный email, посмотриие в личном кабинете";
                 }
-
             }
         }
-        req.getRequestDispatcher("templates/application.ftl").forward(req,resp);
+
+        resp.setContentType("text/plain");
+        System.out.println(result);
+        resp.setCharacterEncoding("UTF-8");
+        resp.getWriter().write(result);
     }
 }
