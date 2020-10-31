@@ -183,9 +183,6 @@
                             Добавить
                         </button>
                         <div class="error" id="comment-error" style="color: white">${comment_error}</div>
-                        <#--                        <a class="btn btn-trans btn-icon fa fa-video-camera add-tooltip" href="#"></a>-->
-                        <#--                        <a class="btn btn-trans btn-icon fa fa-camera add-tooltip" href="#"></a>-->
-                        <#--                        <a class="btn btn-trans btn-icon fa fa-file add-tooltip" href="#"></a>-->
                     </div>
                 </form>
             </div>
@@ -194,12 +191,26 @@
             <div class="panel-body">
                 <#list comments as comment>
                     <div class="media-block">
-                        <a class="media-left" href="#"><img class="img-circle img-sm" alt="Профиль пользователя"
-                                                            src="${comment.user.img}"></a>
+                        <#if user == "">
+                            <a class="media-left" href="#"><img class="img-circle img-sm" alt="Профиль пользователя"
+                                                                src="${comment.user.img}"></a>
+                        <#else>
+                            <#if user.id == comment.user.id>
+                                <a class="media-left" href="#"><img class="img-circle img-sm" alt="Профиль пользователя"
+                                                                    src="/FitnessRams_war/img"></a>
+                            <#else>
+                                <a class="media-left" href="#"><img class="img-circle img-sm" alt="Профиль пользователя"
+                                                                    src="${comment.user.img}"></a>
+                            </#if>
+                        </#if>
+
+
                         <div class="media-body">
                             <div class="mar-btm">
-                                <a href="#" class="btn-link text-semibold media-heading box-inline">${comment.user.username} ${comment.user.surname}</a>
-                                <p class="text-muted text-sm"><i class="fa fa-mobile fa-lg"></i>${comment.date_comment}</p>
+                                <a href="#"
+                                   class="btn-link text-semibold media-heading box-inline">${comment.user.username} ${comment.user.surname}</a>
+                                <p class="text-muted text-sm"><i class="fa fa-mobile fa-lg"></i>${comment.date_comment}
+                                </p>
                             </div>
                             <p>${comment.text_comment}</p>
                             <hr>
@@ -210,38 +221,9 @@
         </div>
     </div>
 </div>
-<div class="footer">
-    <div class="footer_items">
-        <a class="footer_items-item" href="#" data-toggle="modal" data-target="#policy">Политика конфиденциальности</a>
-        <a href="#">Обработка персональных данных</a>
-    </div>
-    <div class="footer_items">
-        <a class="footer_items-item" href="#" data-toggle="modal"
-           data-target="#exampleModal" id="feedback">Написать нам</a>
-        <a href="#" data-toggle="modal"
-           data-target="#exampleModal">Сообщить об ошибке</a>
-    </div>
-    <div class="footer_items">
-        <span class="footer_items-item">Где мы находимся:</span>
-        <span>г. Казань, ул. Кремлевская д.35</span>
-    </div>
-</div>
 
-<div class="modal fade" id="policy" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="modal-body">
-                <#include "policy.ftl">
-            </div>
-        </div>
-    </div>
-</div>
+
+<#include "footer.ftl">
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>

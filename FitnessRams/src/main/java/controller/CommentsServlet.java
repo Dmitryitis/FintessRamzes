@@ -8,8 +8,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import java.io.IOException;
-import java.io.PrintWriter;
+import java.io.*;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -50,6 +49,7 @@ public class CommentsServlet extends HttpServlet {
                 String res = CommentDao.insert_comment(comment);
             }
         }
+
         resp.sendRedirect("/FitnessRams_war/home");
     }
 }

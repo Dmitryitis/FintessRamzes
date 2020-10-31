@@ -92,52 +92,15 @@
         </div>
     </div>
 </div>
-<div class="footer">
-    <div class="footer_items">
-        <a class="footer_items-item" href="#">Политика конфиденциальности</a>
-        <a href="#">Обработка персональных данных</a>
-    </div>
-    <div class="footer_items">
-        <a class="footer_items-item" href="#" data-toggle="modal"
-           data-target="#exampleModal" id="feedback">Написать нам</a>
-        <a href="#" data-toggle="modal"
-           data-target="#exampleModal">Сообщить об ошибке</a>
-    </div>
-    <div class="footer_items">
-        <span class="footer_items-item">Где мы находимся:</span>
-        <span>г. Казань, ул. Кремлевская д.35</span>
-    </div>
-</div>
-<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog"
-     aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="modal-body">
-                <div class="comment_mod_home">
-                    <label for="comment"><span class="text_mode_home">КОММЕНТАРИЙ</span></label>
-                    <textarea class="aria_home" type="" placeholder="Введите комментарий" name="comment"
-                              id="comment"
-                              required>
-                                </textarea>
-                </div>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                <form action="#feedback" method="post">
-                    <button type="button" class="btn btn-primary" data-dismiss="modal">Save changes
-                    </button>
-                </form>
-            </div>
-        </div>
-    </div>
-</div>
+
+<#include "footer.ftl">
+
+
 <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css"
       rel="stylesheet"/>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+    <#include "js/bootstrap.min.js">
+</script>
 </body>
 </html>

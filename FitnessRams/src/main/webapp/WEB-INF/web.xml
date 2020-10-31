@@ -186,12 +186,12 @@
         <filter-name>LoginFilter</filter-name>
         <url-pattern>/auth</url-pattern>
     </filter-mapping>
-    
+
     <servlet>
         <servlet-name>CommentsServlet</servlet-name>
         <servlet-class>controller.CommentsServlet</servlet-class>
     </servlet>
-    
+
     <servlet-mapping>
         <servlet-name>CommentsServlet</servlet-name>
         <url-pattern>/comment</url-pattern>

@@ -36,21 +36,15 @@
                             <label for="password"><span class="item_log">ПАРОЛЬ</span></label>
                             <div class="form_field">
                                 <input class="inp_log" type="password" placeholder="Введите пароль" name="password"
-                                       id="password"
-
-                                       onkeypress="CountPass('pass_id')" onfocus="CountPass('pass_id')"
-                                       onkeyup="CountPass('pass_id')" required>
-                                <div id="pass_correct"></div>
-                                <span class="form_error">Это поле должно содержать хотя бы 3 символа</span>
+                                       id="password" pattern="(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%^&+=])(?=\S+$).{5,}" required>
+                                <span class="form_error">Это поле должно содержать хотя бы 5 символа.Одну заглавную,строчную,цифру,@#$%^&+=</span>
                             </div>
 
                             <label for="password-repeat"><span class="item_log">ПОВТОРИТЬ ПАРОЛЬ</span></label>
                             <div class="form_field">
                                 <input class="inp_log" type="password" placeholder="Повторите пароль"
                                        name="password-repeat"
-                                       id="password-repeat" onkeypress="CountPass('pass_id')"
-                                       onfocus="CountPass('pass_id')"
-                                       onkeyup="CountPass('pass_id')" required>
+                                       id="password-repeat" required>
 
                             </div>
 

@@ -388,12 +388,12 @@ ul {
     min-height: 90vh;
 }
 
-.help-profile{
+.help-profile {
     background: none;
     border: 0;
 }
 
-.help-profile:focus{
+.help-profile:focus {
     outline: 0;
 }
 
@@ -765,8 +765,8 @@ label {
     height: 45px;
 }
 
-.help-color{
-    background:green;
+.help-color {
+    background: green;
 }
 
 .status_abonement_prof {
@@ -778,7 +778,7 @@ label {
     line-height: 48px;
 }
 
-.font-helper{
+.font-helper {
     color: white;
 }
 
@@ -818,11 +818,11 @@ label {
     color: white;
 }
 
-.name_coach_team:hover{
+.name_coach_team:hover {
     color: white;
 }
 
-.name_coach_team:focus{
+.name_coach_team:focus {
     outline: 0;
 }
 
@@ -876,7 +876,7 @@ label {
     flex-direction: column;
 }
 
-.item_tick{
+.item_tick {
     width: 28%;
     padding: 20px 10px;
     background: #212121;
@@ -1037,11 +1037,11 @@ label {
 }
 
 
-.error__app{
+.error__app {
     margin: 10px 0;
 }
 
-.my_login{
+.my_login {
     padding: 15px;
     margin-bottom: 15px;
 }
@@ -1431,7 +1431,7 @@ h1 {
 
 
 /*Modal*/
-.modal__team{
+.modal__team {
     display: flex;
     flex-direction: column;
     padding: 0;
@@ -1439,65 +1439,65 @@ h1 {
     margin-bottom: 20px;
 }
 
-.modal__team-photo{
+.modal__team-photo {
     width: 100%;
 
     margin-bottom: 10px;
 }
 
-.modal__team-img{
+.modal__team-img {
     width: 100%;
     max-width: 100%;
     height: auto;
 }
 
-.modal__team-content{
+.modal__team-content {
     padding: 10px;
     display: flex;
     flex-direction: column;
 }
 
-.modal__team-name{
+.modal__team-name {
     font-size: 18px;
     color: black;
 
     margin-bottom: 10px;
 }
 
-.modal__team-surname{
+.modal__team-surname {
     font-size: 18px;
     color: black;
 
     margin-bottom: 10px;
 }
 
-.modal__team-about{
+.modal__team-about {
     font-size: 16px;
     color: black;
 
     margin-bottom: 10px;
 }
 
-.modal__team-experience{
+.modal__team-experience {
     font-size: 16px;
     color: black;
 
     margin-bottom: 10px;
 }
 
-.modal__team-con{
+.modal__team-con {
     font-size: 16px;
     color: #999;
 
     margin-bottom: 10px;
 }
 
-.modal__team-ico{
+.modal__team-ico {
     display: flex;
     width: 100%;
 }
 
-.modal__team-item{
+.modal__team-item {
     margin-right: 10px;
     width: 40px;
     height: 40px;
@@ -1509,29 +1509,29 @@ h1 {
     background: #999;
 
     transition: transform 0.4s linear,
-background 0.4s linear;
+    background 0.4s linear;
 }
 
-.modal__team-item:hover{
+.modal__team-item:hover {
     background: lightpink;
     text-decoration: none;
 
     transform: translateY(-3px);
 }
 
-.whats{
+.whats {
     color: white;
     font-size: 18px;
     text-decoration: none;
 }
 
-.vk{
+.vk {
     color: white;
     text-decoration: none;
     font-size: 18px;
 }
 
 
-.photo{
+.photo {
     text-decoration: none;
 }

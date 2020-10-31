@@ -4,12 +4,14 @@ import dao.CommentDao;
 import dao.LoginDao;
 import model.Comment;
 import model.User;
+import utilite.KnuthMorrisPrathPatternSearch;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.*;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.regex.Pattern;
 
 public class HomeServlet extends HttpServlet {
     @Override
@@ -22,9 +24,17 @@ public class HomeServlet extends HttpServlet {
             User user = new User();
 
             System.out.println(cookies[0].getValue());
-            user.setEmail(cookies[1].getValue());
-            user.setPassword(cookies[2].getValue());
-            user.setId(cookies[3].getValue());
+            if (KnuthMorrisPrathPatternSearch.patternOfSearch(cookies[1].getValue(),"@")){
+                System.out.println("True@");
+                user.setEmail(cookies[1].getValue());
+                user.setPassword(cookies[2].getValue());
+                user.setId(cookies[3].getValue());
+            } else {
+                user.setEmail(cookies[0].getValue());
+                user.setPassword(cookies[1].getValue());
+                user.setId(cookies[2].getValue());
+            }
+
             System.out.println(user.getPassword());
             user = LoginDao.auth(user);
 
@@ -40,7 +50,7 @@ public class HomeServlet extends HttpServlet {
             req.setAttribute("user", user);
             RequestDispatcher requestDispatcher = req.getRequestDispatcher("templates/home.ftl");
             requestDispatcher.forward(req, resp);
-        } else if (req.getSession().getAttribute("user") != null) {
+        }  else if (req.getSession().getAttribute("user") != null) {
             ArrayList<Comment> comments = CommentDao.all_comment();
             System.out.println(comments.get(0).getText_comment());
             System.out.println(comments.get(0).getUser().getImg());

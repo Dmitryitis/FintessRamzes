@@ -5,10 +5,6 @@ import dao.LoginDao;
 import dao.ProfileDao;
 import model.Abonement;
 import model.User;
-import org.apache.commons.fileupload.FileItem;
-import org.apache.commons.fileupload.FileUploadException;
-import org.apache.commons.fileupload.disk.DiskFileItemFactory;
-import org.apache.commons.fileupload.servlet.ServletFileUpload;
 
 
 import javax.servlet.RequestDispatcher;
@@ -22,6 +18,7 @@ import javax.servlet.http.Part;
 import java.io.*;
 import java.nio.file.Paths;
 import java.util.List;
+import java.util.regex.Pattern;
 
 @MultipartConfig
 public class ProfileServlet extends HttpServlet {
@@ -30,6 +27,7 @@ public class ProfileServlet extends HttpServlet {
         req.setCharacterEncoding("UTF-8");
         User user = (User) req.getSession().getAttribute("user");
         String username = req.getParameter("username");
+        String pattern  = "^([a-z0-9_\\.-])+@[a-z0-9-]+\\.([a-z]{2,4}\\.)?[a-z]{2,4}$";
         System.out.println(username);
         String surname = req.getParameter("surname");
         String email = req.getParameter("email");
@@ -38,6 +36,13 @@ public class ProfileServlet extends HttpServlet {
         String fileName = Paths.get(part.getSubmittedFileName()).getFileName().toString();
         String pathFile = "";
         String absPath = "";
+
+        if (!Pattern.matches(pattern,email) && !email.equals("")){
+            req.setAttribute("error_email", "email не подходит под example@email.com");
+            RequestDispatcher requestDispatcher = req.getRequestDispatcher("templates/profile.ftl");
+            requestDispatcher.forward(req, resp);
+            return;
+        }
 
         if (fileName.length()>1){
             InputStream fileContent = part.getInputStream();
@@ -85,8 +90,6 @@ public class ProfileServlet extends HttpServlet {
         if (redactUser.equals("SUCCESS")) {
             req.setAttribute("user", user);
             resp.sendRedirect("/FitnessRams_war/profile");
-//            RequestDispatcher requestDispatcher = req.getRequestDispatcher("templates/redactProfile.ftl");
-//            requestDispatcher.forward(req, resp);
         }
     }
 
