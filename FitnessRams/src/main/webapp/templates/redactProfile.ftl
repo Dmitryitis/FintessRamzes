@@ -35,6 +35,11 @@
                             <button class="btn_check_prof" data-toggle="modal" data-target="#abonement">Посмотреть
                                 абонемент
                             </button>
+                            <form action="/FitnessRams_war/diary" method="get">
+                                <button type="submit" class="btn_check_prof">
+                                    <span class="text_check_prof">Дневник тренировок</span>
+                                </button>
+                            </form>
                         </#if>
 
 

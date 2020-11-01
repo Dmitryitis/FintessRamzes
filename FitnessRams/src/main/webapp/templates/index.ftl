@@ -9,9 +9,9 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <style>
-        <#include "css/style.css">
-    </style>
+   <style>
+       <#include "css/style.css">
+   </style>
 </head>
 <body>
 <div class="body_ind">

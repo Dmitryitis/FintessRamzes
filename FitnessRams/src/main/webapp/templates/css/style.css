@@ -1535,3 +1535,249 @@ h1 {
 .photo {
     text-decoration: none;
 }
+
+
+/*Diary*/
+.diary__btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    color: black;
+}
+
+.diary__btn:hover {
+    text-decoration: none;
+    color: black;
+}
+
+.redactDiary {
+    background: white;
+    width: 100%;
+    padding: 20px 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.diary__redact {
+    padding: 20px 30px;
+    color: white;
+    font-size: 18px;
+    background: #ec22bd;
+    border: 0;
+    cursor: pointer;
+
+    transition: background 0.3s linear;
+}
+
+.diary__redact:focus {
+    outline: 0;
+}
+
+.diary__redact:hover {
+    background: #f108bd;
+}
+
+.redactDiary {
+    width: 100%;
+    padding: 80px 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.redact__title {
+    font-size: 40px;
+    color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    margin-bottom: 40px;
+}
+
+.redactor {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.redactor__title {
+    font-size: 30px;
+    color: black;
+    margin-bottom: 10px;
+}
+
+.button__col {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin-bottom: 60px;
+}
+
+.minus {
+    padding: 8px 30px;
+    background: #15b3d6;
+    border: 0;
+    cursor: pointer;
+    font-size: 16px;
+    color: white;
+
+    margin-right: 15px;
+}
+
+.minus:focus {
+    outline: 0;
+}
+
+.plus {
+    padding: 8px 30px;
+    background: #a1ff83;
+    border: 0;
+    cursor: pointer;
+    font-size: 16px;
+    color: white;
+}
+
+.plus:focus {
+    outline: 0;
+}
+
+.record__items {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.record__item {
+    width: 20%;
+    display: flex;
+    flex-direction: column;
+    padding: 20px 10px;
+    border: 1px solid #999;
+    border-radius: 6px;
+
+    margin-right: 20px;
+    margin-bottom: 20px;
+}
+
+.day {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+
+    margin-bottom: 10px;
+}
+
+.choose__day {
+    padding: 8px 30px;
+}
+
+.time {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.start-time {
+    margin-right: 10px;
+}
+
+.end-time {
+    margin-left: 10px;
+}
+
+
+.text__diary {
+    width: 100%;
+    word-break: break-word;
+}
+
+.text__day {
+    width: 100%;
+    padding: 12px 30px;
+    font-size: 16px;
+    color: black;
+    resize: none;
+}
+
+.text__day:focus {
+    outline: 0;
+}
+
+.all__records {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 50px;
+}
+
+.all__records-title {
+    font-size: 30px;
+    color: black;
+
+    margin-bottom: 10px;
+}
+
+.btn__save {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.redactor__save {
+    padding: 8px 30px;
+    font-size: 18px;
+    color: white;
+    background: #ff92d7;
+    border: 0;
+
+    margin-top: 10px;
+}
+
+.redactor__save:focus {
+    outline: 0;
+}
+
+.btn__delete {
+    margin-top: 10px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.delete {
+    background: none;
+    border: 0;
+    color: black;
+    font-size: 13px;
+    cursor: pointer;
+
+    transition: color 0.4s linear;
+}
+
+.delete:hover {
+    color: #ff6885;
+    text-decoration: underline;
+}
+
+.delete:focus {
+    outline: 0;
+}
+
+
+.btn__save{
+    display: flex;
+    flex-direction: column;
+}
+
+.help__text{
+    text-overflow: ellipsis;
+    overflow: hidden;
+}

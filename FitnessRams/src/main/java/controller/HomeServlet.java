@@ -52,8 +52,6 @@ public class HomeServlet extends HttpServlet {
             requestDispatcher.forward(req, resp);
         }  else if (req.getSession().getAttribute("user") != null) {
             ArrayList<Comment> comments = CommentDao.all_comment();
-            System.out.println(comments.get(0).getText_comment());
-            System.out.println(comments.get(0).getUser().getImg());
 
             req.setAttribute("comments",comments);
             req.setAttribute("comment_error", "");

@@ -189,34 +189,39 @@
         </div>
         <div class="panel">
             <div class="panel-body">
-                <#list comments as comment>
-                    <div class="media-block">
-                        <#if user == "">
-                            <a class="media-left" href="#"><img class="img-circle img-sm" alt="Профиль пользователя"
-                                                                src="${comment.user.img}"></a>
-                        <#else>
-                            <#if user.id == comment.user.id>
-                                <a class="media-left" href="#"><img class="img-circle img-sm" alt="Профиль пользователя"
-                                                                    src="/FitnessRams_war/img"></a>
-                            <#else>
+                <#if comments??>
+                    <#list comments as comment>
+                        <div class="media-block">
+                            <#if user == "">
                                 <a class="media-left" href="#"><img class="img-circle img-sm" alt="Профиль пользователя"
                                                                     src="${comment.user.img}"></a>
+                            <#else>
+                                <#if user.id == comment.user.id>
+                                    <a class="media-left" href="#"><img class="img-circle img-sm"
+                                                                        alt="Профиль пользователя"
+                                                                        src="/FitnessRams_war/img"></a>
+                                <#else>
+                                    <a class="media-left" href="#"><img class="img-circle img-sm"
+                                                                        alt="Профиль пользователя"
+                                                                        src="${comment.user.img}"></a>
+                                </#if>
                             </#if>
-                        </#if>
 
 
-                        <div class="media-body">
-                            <div class="mar-btm">
-                                <a href="#"
-                                   class="btn-link text-semibold media-heading box-inline">${comment.user.username} ${comment.user.surname}</a>
-                                <p class="text-muted text-sm"><i class="fa fa-mobile fa-lg"></i>${comment.date_comment}
-                                </p>
+                            <div class="media-body">
+                                <div class="mar-btm">
+                                    <a href="#"
+                                       class="btn-link text-semibold media-heading box-inline">${comment.user.username} ${comment.user.surname}</a>
+                                    <p class="text-muted text-sm"><i
+                                                class="fa fa-mobile fa-lg"></i>${comment.date_comment}
+                                    </p>
+                                </div>
+                                <p>${comment.text_comment}</p>
+                                <hr>
                             </div>
-                            <p>${comment.text_comment}</p>
-                            <hr>
                         </div>
-                    </div>
-                </#list>
+                    </#list>
+                </#if>
             </div>
         </div>
     </div>

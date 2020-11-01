@@ -50,6 +50,11 @@ public class ApplicationServlet extends HttpServlet {
         }
         if (req.getSession().getAttribute("user") == "") {
             result = "Войдите в систему";
+            resp.setContentType("text/plain");
+            System.out.println(result);
+            resp.setCharacterEncoding("UTF-8");
+            resp.getWriter().write(result);
+            return;
         } else {
             User user = (User) req.getSession().getAttribute("user");
             if (user.getStatus_abonement() == 1) {
@@ -64,7 +69,7 @@ public class ApplicationServlet extends HttpServlet {
                     result = "Неправильный email, посмотрите в личном кабинете";
                 }
 
-            } else {
+            } else if (user.getStatus_abonement() == 0){
                 if (email.equals(user.getEmail())) {
                     System.out.println("urer");
                     user.setStatus_abonement(1);
@@ -77,6 +82,11 @@ public class ApplicationServlet extends HttpServlet {
                     }
                 } else {
                     result = "Неправильный email, посмотриие в личном кабинете";
+                    resp.setContentType("text/plain");
+                    System.out.println(result);
+                    resp.setCharacterEncoding("UTF-8");
+                    resp.getWriter().write(result);
+                    return;
                 }
             }
         }

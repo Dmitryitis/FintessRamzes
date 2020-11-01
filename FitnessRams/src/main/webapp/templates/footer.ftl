@@ -3,10 +3,6 @@
         <a class="footer_items-item" href="#" data-toggle="modal" data-target="#policy">Политика конфиденциальности</a>
     </div>
     <div class="footer_items">
-        <a class="footer_items-item" data-toggle="modal" data-target="#feedback" href="#">Написать нам</a>
-        <a href="#">Сообщить об ошибке</a>
-    </div>
-    <div class="footer_items">
         <span class="footer_items-item">Где мы находимся:</span>
         <span>г. Казань, ул. Кремлевская д.35</span>
     </div>
@@ -35,7 +31,7 @@
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                 <form action="#feedback" method="post">
-                    <button type="button" class="btn btn-primary" data-dismiss="modal">Save changes
+                    <button type="button" class="btn btn-primary" data-dismiss="modal">Отправить
                     </button>
                 </form>
             </div>
